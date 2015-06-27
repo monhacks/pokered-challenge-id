@@ -220,6 +220,11 @@ SmartAI:
     jr z, .selfbuffcheck
     inc de
     call ReadMove
+    ld a, [W_ENEMYMOVEEFFECT]
+    cp SUPER_FANG_EFFECT
+    jr z, .seloop
+    cp SPECIAL_DAMAGE_EFFECT
+    jr z, .seloop
     ld a, [W_ENEMYMOVEPOWER]
 	and a
     jr z, .seloop
