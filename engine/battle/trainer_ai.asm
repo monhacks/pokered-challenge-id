@@ -202,10 +202,22 @@ SmartAI:
     srl b
     ld a, c
     cp b
-    jr nc, .effectivenesscheck
+    jr nc, .dreameatercheck
     ld hl, HealingMoves
     ld b, -8
     call AlterMovePriorityArray
+.dreameatercheck
+    ld a, [wBattleMonStatus]
+    and SLP
+    ld a, DREAM_EATER
+    ld [W_AIBUFFER1], a
+    jr z, .debuffdreameater
+    ld b, -1
+    jr .applydreameater
+.debuffdreameater
+    ld b, 20
+.applydreameater
+    call AlterMovePriority
 .effectivenesscheck
 ; encourage any damaging move with SE; slightly discourage any NVE move but not by as much
     ld hl, wBuffer - 1
