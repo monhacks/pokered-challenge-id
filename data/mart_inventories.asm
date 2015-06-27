@@ -41,7 +41,7 @@ CeladonMart2Text2:: ; 2482 (0:2482)
 
 ; Celadon Dept. Store 4F
 CeladonMart4Text1:: ; 248e (0:248e)
-	db $FE,5,POKE_DOLL,ETHER,MAX_ETHER,ELIXER,MAX_ELIXER,$FF
+	db $FE,5,PP_UP,ETHER,MAX_ETHER,ELIXER,MAX_ELIXER,$FF
 
 ; Celadon Dept. Store 5F (1)
 CeladonMart5Text3:: ; 2496 (0:2496)
