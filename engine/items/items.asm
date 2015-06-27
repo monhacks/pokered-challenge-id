@@ -2165,9 +2165,7 @@ ItemUseTMHM: ; e479 (3:6479)
 	and a
 	ret z
 	ld a,[wcf91]
-	call IsItemHM
-	ret c
-	jp RemoveUsedItem
+	ret ; don't consume TMs
 
 BootedUpTMText: ; e54f (3:654f)
 	TX_FAR _BootedUpTMText

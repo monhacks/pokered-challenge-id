@@ -31,12 +31,13 @@ LavenderMartText1:: ; 246a (0:246a)
 
 ; Celadon Dept. Store 2F (1)
 CeladonMart2Text1:: ; 2476 (0:2476)
-	db $FE,8,SUPER_POTION,REVIVE,SUPER_REPEL,ANTIDOTE
-	db BURN_HEAL,ICE_HEAL,AWAKENING,PARLYZ_HEAL,$FF
+	db $FE,15,TM_01,TM_02,TM_03,TM_04,TM_05,TM_06,TM_07,TM_08
+    db TM_09,TM_10,TM_11,TM_12,TM_13,TM_14,TM_15,$FF
 
 ; Celadon Dept. Store 2F (2)
 CeladonMart2Text2:: ; 2482 (0:2482)
-	db $FE,9,TM_32,TM_33,TM_02,TM_07,TM_37,TM_01,TM_05,TM_09,TM_17,$FF
+	db $FE,12,TM_24,TM_25,TM_26,TM_27,TM_28,TM_29,TM_30,TM_31
+    db TM_32,TM_33,TM_34,TM_35,$FF
 
 ; Celadon Dept. Store 4F
 CeladonMart4Text1:: ; 248e (0:248e)

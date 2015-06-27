@@ -15,7 +15,7 @@ Lab3Text1: ; 75c94 (1d:5c94)
 	jr nz, .asm_e551a ; 0x75c9a
 	ld hl, TM35PreReceiveText
 	call PrintText
-	ld bc, (TM_35 << 8) | 1
+	ld bc, (RARE_CANDY << 8) | 1
 	call GiveItem
 	jr nc, .BagFull
 	ld hl, ReceivedTM35Text

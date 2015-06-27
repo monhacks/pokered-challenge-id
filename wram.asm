@@ -813,6 +813,9 @@ wStringBuffer2:: ; cf70
 	ds 16 + 1
 wStringBuffer3:: ; cf81
 	ds 9 + 1
+    
+; extra byte for 15 byte shop inventory
+    ds 1
 
 wList:: ; cf8b
 	ds 2
@@ -936,9 +939,9 @@ wEnemyMonAttack::    dw
 wEnemyMonDefense::   dw
 wEnemyMonSpeed::     dw
 wEnemyMonSpecial::   dw
-wEnemyMonPP::        ds 2 ; NUM_MOVES - 2
+wEnemyMonPP::        ds 1 ; NUM_MOVES - 3
 SECTION "WRAM Bank 1", WRAMX, BANK[1]
-                     ds 2 ; NUM_MOVES - 2
+                     ds 3 ; NUM_MOVES - 1
 
 wEnemyMonBaseStats:: ds 5
 wEnemyMonCatchRate:: ds 1

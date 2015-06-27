@@ -38,7 +38,7 @@ ItemNames: ; 472b (1:472b)
 	db "IRON@"
 	db "CARBOS@"
 	db "CALCIUM@"
-	db "RARE CANDY@"
+	db "BIG NUGGET@"
 	db "DOME FOSSIL@"
 	db "HELIX FOSSIL@"
 	db "SECRET KEY@"
