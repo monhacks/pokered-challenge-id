@@ -21,13 +21,13 @@ endm
 	move THUNDERPUNCH, PARALYZE_SIDE_EFFECT1,       75, ELECTRIC, 100, 15
 	move SCRATCH,      NO_ADDITIONAL_EFFECT,        40, NORMAL,   100, 35
 	move VICEGRIP,     NO_ADDITIONAL_EFFECT,        55, NORMAL,   100, 30
-	move GUILLOTINE,   PARALYZE_SIDE_EFFECT1,       65, NORMAL,   100, 20
+	move SPARK,        PARALYZE_SIDE_EFFECT1,       65, NORMAL,   100, 20
 	move RAZOR_WIND,   CHARGE_EFFECT,               80, NORMAL,    75, 10
 	move SWORDS_DANCE, ATTACK_UP2_EFFECT,            0, NORMAL,   100, 30
 	move CUT,          NO_ADDITIONAL_EFFECT,        50, NORMAL,    95, 30
 	move GUST,         NO_ADDITIONAL_EFFECT,        40, NORMAL,   100, 35
 	move WING_ATTACK,  NO_ADDITIONAL_EFFECT,        35, FLYING,   100, 35
-	move WHIRLWIND,    NO_ADDITIONAL_EFFECT,        60, DRAGON,   100, 20
+	move DRAGONBREATH, PARALYZE_SIDE_EFFECT1,       60, DRAGON,   100, 20
 	move FLY,          FLY_EFFECT,                  70, FLYING,    95, 15
 	move BIND,         TRAPPING_EFFECT,             15, NORMAL,    75, 20
 	move SLAM,         NO_ADDITIONAL_EFFECT,        80, NORMAL,    75, 20
@@ -41,7 +41,7 @@ endm
 	move HEADBUTT,     FLINCH_SIDE_EFFECT2,         70, NORMAL,   100, 15
 	move HORN_ATTACK,  NO_ADDITIONAL_EFFECT,        65, NORMAL,   100, 25
 	move FURY_ATTACK,  TWO_TO_FIVE_ATTACKS_EFFECT,  15, NORMAL,    85, 20
-	move HORN_DRILL,   SWIFT_EFFECT,                60, GHOST,    100, 20
+	move SHADOW_PUNCH, SWIFT_EFFECT,                60, GHOST,    100, 20
 	move TACKLE,       NO_ADDITIONAL_EFFECT,        35, NORMAL,    95, 35
 	move BODY_SLAM,    PARALYZE_SIDE_EFFECT2,       85, NORMAL,   100, 15
 	move WRAP,         TRAPPING_EFFECT,             15, NORMAL,    85, 20
@@ -55,7 +55,7 @@ endm
 	move LEER,         DEFENSE_DOWN1_EFFECT,         0, NORMAL,   100, 30
 	move BITE,         FLINCH_SIDE_EFFECT1,         60, NORMAL,   100, 25
 	move GROWL,        ATTACK_DOWN1_EFFECT,          0, NORMAL,   100, 40
-	move ROAR,         POISON_SIDE_EFFECT2,         90, POISON,   100, 10
+	move SLUDGE_BOMB,  POISON_SIDE_EFFECT2,         90, POISON,   100, 10
 	move SING,         SLEEP_EFFECT,                 0, NORMAL,    55, 15
 	move SUPERSONIC,   CONFUSION_EFFECT,             0, NORMAL,    55, 20
 	move SONICBOOM,    SPECIAL_DAMAGE_EFFECT,        1, NORMAL,    90, 20
@@ -99,7 +99,7 @@ endm
 	move THUNDER,      PARALYZE_SIDE_EFFECT1,      120, ELECTRIC,  70, 10
 	move ROCK_THROW,   NO_ADDITIONAL_EFFECT,        50, ROCK,      95, 15
 	move EARTHQUAKE,   NO_ADDITIONAL_EFFECT,       100, GROUND,   100, 10
-	move FISSURE,      OHKO_EFFECT,                  1, GROUND,    30,  5
+	move FLAME_WHEEL,      BURN_SIDE_EFFECT1,           60, FIRE,     100, 25
 	move DIG,          CHARGE_EFFECT,              100, GROUND,   100, 10
 	move TOXIC,        POISON_EFFECT,                0, POISON,    85, 10
 	move CONFUSION,    CONFUSION_SIDE_EFFECT,       50, PSYCHIC,  100, 25
@@ -109,7 +109,7 @@ endm
 	move AGILITY,      SPEED_UP2_EFFECT,             0, PSYCHIC,  100, 30
 	move QUICK_ATTACK, NO_ADDITIONAL_EFFECT,        40, NORMAL,   100, 30
 	move RAGE,         RAGE_EFFECT,                 20, NORMAL,   100, 20
-	move TELEPORT,     BURN_SIDE_EFFECT1,           60, FIRE,     100, 25
+    move TELEPORT,     SWITCH_AND_TELEPORT_EFFECT,   0, PSYCHIC,  100, 20
 	move NIGHT_SHADE,  SPECIAL_DAMAGE_EFFECT,        0, GHOST,    100, 15
 	move MIMIC,        MIMIC_EFFECT,                 0, NORMAL,   100, 10
 	move SCREECH,      DEFENSE_DOWN2_EFFECT,         0, NORMAL,    85, 40
@@ -125,7 +125,7 @@ endm
 	move LIGHT_SCREEN, LIGHT_SCREEN_EFFECT,          0, PSYCHIC,  100, 30
 	move HAZE,         HAZE_EFFECT,                  0, ICE,      100, 30
 	move REFLECT,      REFLECT_EFFECT,               0, PSYCHIC,  100, 20
-	move FOCUS_ENERGY, FLINCH_SIDE_EFFECT1,         60, FLYING,    95, 25
+	move AIR_CUTTER,   FLINCH_SIDE_EFFECT1,         60, FLYING,    95, 25
 	move BIDE,         BIDE_EFFECT,                  0, NORMAL,   100, 10
 	move METRONOME,    METRONOME_EFFECT,             0, NORMAL,   100, 10
 	move MIRROR_MOVE,  MIRROR_MOVE_EFFECT,           0, FLYING,   100, 20
@@ -159,7 +159,7 @@ endm
 	move SPORE,        SLEEP_EFFECT,                 0, GRASS,    100, 15
 	move FLASH,        ACCURACY_DOWN1_EFFECT,        0, NORMAL,    70, 20
 	move PSYWAVE,      SPECIAL_DAMAGE_EFFECT,        1, PSYCHIC,   80, 15
-	move SPLASH,       DRAIN_HP_EFFECT,             75, GRASS,    100, 10
+	move GIGA_DRAIN,   DRAIN_HP_EFFECT,             75, GRASS,    100, 10
 	move ACID_ARMOR,   DEFENSE_UP2_EFFECT,           0, POISON,   100, 40
 	move CRABHAMMER,   NO_ADDITIONAL_EFFECT,        90, WATER,     85, 10
 	move EXPLOSION,    EXPLODE_EFFECT,             170, NORMAL,   100,  5

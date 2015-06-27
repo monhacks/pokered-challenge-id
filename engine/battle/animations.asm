@@ -657,7 +657,7 @@ AnimationIdSpecialEffects: ; 78ef5 (1e:4ef5)
 	db MEGA_PUNCH
 	dw AnimationFlashScreen
 
-	db GUILLOTINE
+	db SPARK
 	dw AnimationFlashScreen
 
 	db MEGA_KICK
@@ -2320,7 +2320,7 @@ IsCryMove: ; 798ad (1e:58ad)
 	ld a,[W_ANIMATIONID]
 	cp a,GROWL
 	jr z,.CryMove
-	cp a,ROAR
+	cp a,SLUDGE_BOMB
 	jr z,.CryMove
 	and a ; clear carry
 	ret

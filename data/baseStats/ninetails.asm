@@ -16,7 +16,7 @@ dw NinetalesPicBack
 db EMBER
 db TAIL_WHIP
 db QUICK_ATTACK
-db ROAR
+db 0
 db 0 ; growth rate
 ; learnset
 db %10100000

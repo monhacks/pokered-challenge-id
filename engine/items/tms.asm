@@ -1,5 +1,10 @@
 ; tests if mon [wcf91] can learn move [wMoveNum]
 CanLearnTM: ; 1373e (4:773e)
+; TEMP CODE
+; return true for every move for now
+    ld c, 1
+    ret
+; original code resumes here
 	ld a, [wcf91]
 	ld [wd0b5], a
 	call GetMonHeader

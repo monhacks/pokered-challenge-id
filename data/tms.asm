@@ -1,12 +1,12 @@
 TechnicalMachines: ; 13773 (4:7773)
 ; staple damaging
     db TWINEEDLE
-    db WHIRLWIND
-    db GUILLOTINE
+    db DRAGONBREATH
+    db SPARK
     db ROLLING_KICK
-    db TELEPORT
-    db FOCUS_ENERGY
-    db HORN_DRILL
+    db FLAME_WHEEL
+    db AIR_CUTTER
+    db SHADOW_PUNCH
     db MEGA_DRAIN
     db BONE_CLUB
     db AURORA_BEAM
@@ -19,8 +19,8 @@ TechnicalMachines: ; 13773 (4:7773)
     db ROCK_SLIDE
     db SURF
     db THUNDERBOLT
-    db SPLASH
-    db ROAR
+    db GIGA_DRAIN
+    db SLUDGE_BOMB
     db PSYCHIC_M
     db FIRE_BLAST
     db EARTHQUAKE
