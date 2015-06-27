@@ -13,7 +13,7 @@ UnknownDungeon2Object: ; 0x45e14 (size=73)
 
 	db $3 ; people
 	db SPRITE_BALL, $9 + 4, $1d + 4, $ff, $ff, ITEM | $1, PP_UP
-	db SPRITE_BALL, $f + 4, $4 + 4, $ff, $ff, ITEM | $2, ULTRA_BALL
+	db SPRITE_BALL, $f + 4, $4 + 4, $ff, $ff, ITEM | $2, HYPER_POTION
 	db SPRITE_BALL, $6 + 4, $d + 4, $ff, $ff, ITEM | $3, FULL_RESTORE
 
 	; warp-to

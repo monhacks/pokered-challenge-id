@@ -6670,6 +6670,10 @@ INCLUDE "engine/overworld/elevator.asm"
 
 INCLUDE "engine/items/tm_prices.asm"
 
+SECTION "bank2D",ROMX,BANK[$2D]
+
+INCLUDE "engine/generate_evolved_encounter.asm"
+
 IF DEF(_OPTION_BEACH_HOUSE)
 SECTION "bank3C",ROMX[$4314],BANK[$3C]
 

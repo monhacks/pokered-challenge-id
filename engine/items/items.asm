@@ -2,8 +2,10 @@ UseItem_: ; d5c7 (3:55c7)
 	ld a,1
 	ld [wcd6a],a
 	ld a,[wcf91]	;contains item_ID
-	cp a,HM_01
+	cp a,TM_01
 	jp nc,ItemUseTMHM
+    cp a, MAX_ELIXER+1
+    jp nc,UnusableItem
 	ld hl,ItemUsePtrTable
 	dec a
 	add a
@@ -55,7 +57,7 @@ ItemUsePtrTable: ; d5e1 (3:55e1)
 	dw ItemUseVitamin    ; IRON
 	dw ItemUseVitamin    ; CARBOS
 	dw ItemUseVitamin    ; CALCIUM
-	dw ItemUseVitamin    ; RARE_CANDY
+	dw UnusableItem      ; RARE_CANDY
 	dw UnusableItem      ; DOME_FOSSIL
 	dw UnusableItem      ; HELIX_FOSSIL
 	dw UnusableItem      ; SECRET_KEY

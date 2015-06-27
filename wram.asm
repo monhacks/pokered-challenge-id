@@ -2290,6 +2290,9 @@ wBoxMonOT::    ds 11 * MONS_PER_BOX ; dd2a
 wBoxMonNicks:: ds 11 * MONS_PER_BOX ; de06
 wBoxMonNicksEnd:: ; dee2
 
+W_EVOLVEMONSPECIES:: ds 1
+W_EVOLVEMONLEVEL:: ds 1
+
 
 SECTION "Stack", WRAMX[$dfff], BANK[1]
 wStack:: ; dfff

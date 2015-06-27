@@ -421,10 +421,6 @@ Mon151_EvosMoves: ; 3b2e0 (e:72e0)
 ;Evolutions
 	db 0
 ;Learnset
-	db 10,TRANSFORM
-	db 20,MEGA_PUNCH
-	db 30,METRONOME
-	db 40,PSYCHIC_M
 	db 0
 Mon130_EvosMoves: ; 3b2ea (e:72ea)
 ;GYARADOS

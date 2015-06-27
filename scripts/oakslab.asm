@@ -900,9 +900,9 @@ asm_1d1e5: ; 1d1e5 (7:51e5)
 	call PrintText
 	xor a
 	ld [wcc49], a
-	ld a, $5
+	ld a, $1
 	ld [W_CURENEMYLVL], a
-	ld a, [wcf91]
+	ld a, MEW
 	ld [wd11e], a
 	call AddPartyMon
 	ld hl, wd72e
@@ -1004,7 +1004,7 @@ OaksLabText5: ; 1d248 (7:5248)
 	bit 4, [hl]
 	set 4, [hl]
 	jr nz, .asm_17c30 ; 0x1d2d7
-	ld bc, (POKE_BALL << 8) | 5
+	ld bc, (POTION << 8) | 5
 	call GiveItem
 	ld hl, OaksLabGivePokeballsText
 	call PrintText

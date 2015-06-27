@@ -26,7 +26,7 @@ SSAnne9Object: ; 0x61c8d (size=188)
 	db SPRITE_BALL, $1 + 4, $c + 4, $ff, $ff, ITEM | $6, MAX_ETHER
 	db SPRITE_GENTLEMAN, $2 + 4, $15 + 4, $ff, $d0, $7 ; person
 	db SPRITE_OLD_PERSON, $1 + 4, $16 + 4, $ff, $d0, $8 ; person
-	db SPRITE_BALL, $c + 4, $0 + 4, $ff, $ff, ITEM | $9, RARE_CANDY
+	db SPRITE_BALL, $c + 4, $0 + 4, $ff, $ff, ITEM | $9, NUGGET
 	db SPRITE_GENTLEMAN, $c + 4, $c + 4, $ff, $d0, $a ; person
 	db SPRITE_YOUNG_BOY, $e + 4, $b + 4, $ff, $ff, $b ; person
 	db SPRITE_BRUNETTE_GIRL, $c + 4, $16 + 4, $ff, $d2, $c ; person

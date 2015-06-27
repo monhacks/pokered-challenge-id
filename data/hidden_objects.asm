@@ -562,7 +562,7 @@ SSAnne6HiddenObjects: ; 46e82 (11:6e82)
 	dbw BANK(PrintTrashText), PrintTrashText
 	db $07,$0d,$00
 	dbw BANK(PrintTrashText), PrintTrashText
-	db $09,$0d,GREAT_BALL
+	db $09,$0d,SUPER_POTION
 	dbw BANK(HiddenItems),HiddenItems
 	db $FF
 SSAnne10HiddenObjects: ; 46e95 (11:6e95)
@@ -626,11 +626,11 @@ CopycatsHouse2FHiddenObjects: ; 46efb (11:6efb)
 	dbw BANK(HiddenItems),HiddenItems
 	db $FF
 UnknownDungeon1HiddenObjects: ; 46f02 (11:6f02)
-	db $0b,$0e,RARE_CANDY
+	db $0b,$0e,NUGGET
 	dbw BANK(HiddenItems),HiddenItems
 	db $FF
 UnknownDungeon3HiddenObjects: ; 46f09 (11:6f09)
-	db $03,$1b,ULTRA_BALL
+	db $03,$1b,HYPER_POTION
 	dbw BANK(HiddenItems),HiddenItems
 	db $FF
 PowerPlantHiddenObjects: ; 46f10 (11:6f10)
@@ -644,7 +644,7 @@ SeafoamIslands3HiddenObjects: ; 46f1d (11:6f1d)
 	dbw BANK(HiddenItems),HiddenItems
 	db $FF
 SeafoamIslands5HiddenObjects: ; 46f24 (11:6f24)
-	db $11,$19,ULTRA_BALL
+	db $11,$19,HYPER_POTION
 	dbw BANK(HiddenItems),HiddenItems
 	db $FF
 Mansion1HiddenObjects: ; 46f2b (11:6f2b)
@@ -667,7 +667,7 @@ Mansion3HiddenObjects: ; 46f3f (11:6f3f)
 	dw Mansion3Script_Switches
 	db $FF
 Mansion4HiddenObjects: ; 46f4c (11:6f4c)
-	db $09,$01,RARE_CANDY
+	db $09,$01,NUGGET
 	dbw BANK(HiddenItems),HiddenItems
 	db $03,$14,$04
 	db BANK(Mansion4Script_Switches)
@@ -679,13 +679,13 @@ Mansion4HiddenObjects: ; 46f4c (11:6f4c)
 Route23HiddenObjects: ; 46f5f (11:6f5f)
 	db $2c,$09,FULL_RESTORE
 	dbw BANK(HiddenItems),HiddenItems
-	db $46,$13,ULTRA_BALL
+	db $46,$13,HYPER_POTION
 	dbw BANK(HiddenItems),HiddenItems
 	db $5a,$08,MAX_ETHER
 	dbw BANK(HiddenItems),HiddenItems
 	db $FF
 VictoryRoad2HiddenObjects: ; 46f72 (11:6f72)
-	db $02,$05,ULTRA_BALL
+	db $02,$05,HYPER_POTION
 	dbw BANK(HiddenItems),HiddenItems
 	db $07,$1a,FULL_RESTORE
 	dbw BANK(HiddenItems),HiddenItems
@@ -808,7 +808,7 @@ SilphCo11FHiddenObjects: ; 47048 (11:7048)
 	dw OpenPokemonCenterPC
 	db $FF
 Route17HiddenObjects: ; 4704f (11:704f)
-	db $0e,$0f,RARE_CANDY
+	db $0e,$0f,NUGGET
 	dbw BANK(HiddenItems),HiddenItems
 	db $2d,$08,FULL_RESTORE
 	dbw BANK(HiddenItems),HiddenItems
@@ -844,10 +844,10 @@ VermilionCityHiddenObjects: ; 47096 (11:7096)
 	dbw BANK(HiddenItems),HiddenItems
 	db $FF
 CeruleanCityHiddenObjects: ; 4709d (11:709d)
-	db $08,$0f,RARE_CANDY
+	db $08,$0f,NUGGET
 	dbw BANK(HiddenItems),HiddenItems
 	db $FF
 Route4HiddenObjects: ; 470a4 (11:70a4)
-	db $03,$28,GREAT_BALL
+	db $03,$28,SUPER_POTION
 	dbw BANK(HiddenItems),HiddenItems
 	db $FF

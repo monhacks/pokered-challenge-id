@@ -21,7 +21,7 @@ MtMoon1Object: ; 0x49b06 (size=145)
 	db SPRITE_BUG_CATCHER, $1b + 4, $1e + 4, $ff, $d3, TRAINER | $7, BUG_CATCHER + $C8, $8
 	db SPRITE_BALL, $14 + 4, $2 + 4, $ff, $ff, ITEM | $8, POTION
 	db SPRITE_BALL, $2 + 4, $2 + 4, $ff, $ff, ITEM | $9, MOON_STONE
-	db SPRITE_BALL, $1f + 4, $23 + 4, $ff, $ff, ITEM | $a, RARE_CANDY
+	db SPRITE_BALL, $1f + 4, $23 + 4, $ff, $ff, ITEM | $a, NUGGET
 	db SPRITE_BALL, $17 + 4, $24 + 4, $ff, $ff, ITEM | $b, ESCAPE_ROPE
 	db SPRITE_BALL, $21 + 4, $14 + 4, $ff, $ff, ITEM | $c, POTION
 	db SPRITE_BALL, $20 + 4, $5 + 4, $ff, $ff, ITEM | $d, TM_12

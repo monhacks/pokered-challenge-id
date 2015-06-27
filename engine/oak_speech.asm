@@ -42,12 +42,12 @@ OakSpeech: ; 6115 (1:6115)
 	call LoadTextBoxTilePatterns
 	call SetDefaultNames
 	predef InitPlayerData2
-	ld hl,wNumBoxItems
-	ld a,POTION
+	ld hl,wNumBagItems
+	ld a,MASTER_BALL
 	ld [wcf91],a
-	ld a,1
+	ld a,5
 	ld [wcf96],a
-	call AddItemToInventory  ; give one potion
+	call AddItemToInventory  ; give 4 balls
 	ld a,[W_ANIMATIONID]
 	ld [wDestinationMap],a
 	call SpecialWarpIn

@@ -16,7 +16,7 @@ SilphCo10Object: ; 0x5a1fb (size=95)
 	db SPRITE_OAK_AIDE, $2 + 4, $a + 4, $ff, $d2, TRAINER | $2, SCIENTIST + $C8, $b
 	db SPRITE_ERIKA, $f + 4, $9 + 4, $fe, $0, $3 ; person
 	db SPRITE_BALL, $c + 4, $2 + 4, $ff, $ff, ITEM | $4, TM_26
-	db SPRITE_BALL, $e + 4, $4 + 4, $ff, $ff, ITEM | $5, RARE_CANDY
+	db SPRITE_BALL, $e + 4, $4 + 4, $ff, $ff, ITEM | $5, NUGGET
 	db SPRITE_BALL, $b + 4, $5 + 4, $ff, $ff, ITEM | $6, CARBOS
 
 	; warp-to

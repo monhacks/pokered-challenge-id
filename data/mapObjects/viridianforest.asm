@@ -24,7 +24,7 @@ ViridianForestObject: ; 0x611da (size=127)
 	db SPRITE_BUG_CATCHER, $12 + 4, $2 + 4, $ff, $d2, TRAINER | $4, BUG_CATCHER + $C8, $3
 	db SPRITE_BALL, $b + 4, $19 + 4, $ff, $ff, ITEM | $5, ANTIDOTE
 	db SPRITE_BALL, $1d + 4, $c + 4, $ff, $ff, ITEM | $6, POTION
-	db SPRITE_BALL, $1f + 4, $1 + 4, $ff, $ff, ITEM | $7, POKE_BALL
+	db SPRITE_BALL, $1f + 4, $1 + 4, $ff, $ff, ITEM | $7, POTION
 	db SPRITE_BUG_CATCHER, $28 + 4, $1b + 4, $ff, $ff, $8 ; person
 
 	; warp-to

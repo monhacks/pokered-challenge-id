@@ -50,32 +50,12 @@ TryDoWildEncounter: ; 13870 (4:7870)
 	ld b, a
 	ld a, [hRandomAdd]
 	cp b
-	jr nc, .CantEncounter2
-	ld a, [hRandomSub]
-	ld b, a
-	ld hl, WildMonEncounterSlotChances
-.determineEncounterSlot
-	ld a, [hli]
-	cp b
-	jr nc, .gotEncounterSlot
-	inc hl
-	jr .determineEncounterSlot
-.gotEncounterSlot
-; determine which wild pokemon (grass or water) can appear in the half-block we're standing in
-	ld c, [hl]
-	ld hl, W_GRASSMONS
-	aCoord 8, 9	
-	cp $14 ; is the bottom left tile (8,9) of the half-block we're standing in a water tile?	
-	jr nz, .gotWildEncounterType ; else, it's treated as a grass tile by default
-	ld hl, W_WATERMONS
-; since the bottom right tile of a "left shore" half-block is $14 but the bottom left tile is not,
-; "left shore" half-blocks (such as the one in the east coast of Cinnabar) load grass encounters.	
+	jr nc, .CantEncounter2	
 .gotWildEncounterType
-	ld b, $0
-	add hl, bc
-	ld a, [hli]
+    callba GenerateEncounter
+	ld a, [W_EVOLVEMONLEVEL]
 	ld [W_CURENEMYLVL], a
-	ld a, [hl]
+	ld a, [W_EVOLVEMONSPECIES]
 	ld [wcf91], a
 	ld [wEnemyMonSpecies2], a
 	ld a, [wRepelRemainingSteps]
@@ -100,19 +80,3 @@ TryDoWildEncounter: ; 13870 (4:7870)
 .willEncounter
 	xor a
 	ret
-
-WildMonEncounterSlotChances: ; 13918 (4:7918)
-; There are 10 slots for wild pokemon, and this is the table that defines how common each of
-; those 10 slots is. A random number is generated and then the first byte of each pair in this
-; table is compared against that random number. If the random number is less than or equal
-; to the first byte, then that slot is chosen.  The second byte is double the slot number.
-	db $32, $00 ; 51/256 = 19.9% chance of slot 0
-	db $65, $02 ; 51/256 = 19.9% chance of slot 1
-	db $8C, $04 ; 39/256 = 15.2% chance of slot 2
-	db $A5, $06 ; 25/256 =  9.8% chance of slot 3
-	db $BE, $08 ; 25/256 =  9.8% chance of slot 4
-	db $D7, $0A ; 25/256 =  9.8% chance of slot 5
-	db $E4, $0C ; 13/256 =  5.1% chance of slot 6
-	db $F1, $0E ; 13/256 =  5.1% chance of slot 7
-	db $FC, $10 ; 11/256 =  4.3% chance of slot 8
-	db $FF, $12 ;  3/256 =  1.2% chance of slot 9
