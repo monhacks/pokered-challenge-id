@@ -14,9 +14,9 @@ dw AbraPicFront
 dw AbraPicBack
 ; attacks known at lvl 0
 db TELEPORT
-db 0
-db 0
-db 0
+db CONFUSION
+db DISABLE
+db PSYWAVE
 db 3 ; growth rate
 ; learnset
 db %10110001

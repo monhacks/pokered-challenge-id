@@ -13,14 +13,10 @@ INCBIN "pic/bmon/chansey.pic",0,1 ; 66, sprite dimensions
 dw ChanseyPicFront
 dw ChanseyPicBack
 ; attacks known at lvl 0
-db POUND
-IF DEF(_YELLOW)
-	db TAIL_WHIP
-ELSE
-	db DOUBLESLAP
-ENDC
-db 0
-db 0
+db MEGA_PUNCH
+db DOUBLESLAP
+db PSYWAVE
+db SOFTBOILED
 db 4 ; growth rate
 ; learnset
 db %10110001

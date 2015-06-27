@@ -13,10 +13,10 @@ INCBIN "pic/bmon/exeggcute.pic",0,1 ; 77, sprite dimensions
 dw ExeggcutePicFront
 dw ExeggcutePicBack
 ; attacks known at lvl 0
-db BARRAGE
+db VINE_WHIP
 db HYPNOSIS
-db 0
-db 0
+db STOMP
+db PSYWAVE
 db 5 ; growth rate
 ; learnset
 db %00100000

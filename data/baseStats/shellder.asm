@@ -13,10 +13,10 @@ INCBIN "pic/bmon/shellder.pic",0,1 ; 55, sprite dimensions
 dw ShellderPicFront
 dw ShellderPicBack
 ; attacks known at lvl 0
-db TACKLE
-db WITHDRAW
-db 0
-db 0
+db RAGE
+db SUPERSONIC
+db CLAMP
+db AURORA_BEAM
 db 5 ; growth rate
 ; learnset
 db %00100000

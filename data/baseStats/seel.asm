@@ -14,9 +14,9 @@ dw SeelPicFront
 dw SeelPicBack
 ; attacks known at lvl 0
 db HEADBUTT
-db 0
-db 0
-db 0
+db GROWL
+db AURORA_BEAM
+db WATER_GUN
 db 0 ; growth rate
 ; learnset
 db %11100000

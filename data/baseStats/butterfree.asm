@@ -14,9 +14,9 @@ dw ButterfreePicFront
 dw ButterfreePicBack
 ; attacks known at lvl 0
 db CONFUSION
-db 0
-db 0
-db 0
+db MEGA_DRAIN
+db STRING_SHOT
+db GUST
 db 0 ; growth rate
 ; learnset
 db %00101010
@@ -25,9 +25,5 @@ db %00111000
 db %11110000
 db %01000011
 db %00101000
-IF DEF(_YELLOW)
-	db %01000010
-ELSE
-	db %00000010
-ENDC
+db %00000010
 db 0 ; padding

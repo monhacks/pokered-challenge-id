@@ -15,8 +15,8 @@ dw AerodactylPicBack
 ; attacks known at lvl 0
 db WING_ATTACK
 db AGILITY
-db 0
-db 0
+db ROCK_THROW
+db SWIFT
 db 5 ; growth rate
 ; learnset
 db %00101010

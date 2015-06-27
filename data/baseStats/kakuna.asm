@@ -13,10 +13,10 @@ INCBIN "pic/bmon/kakuna.pic",0,1 ; 55, sprite dimensions
 dw KakunaPicFront
 dw KakunaPicBack
 ; attacks known at lvl 0
-db HARDEN
-db 0
-db 0
-db 0
+db TWINEEDLE
+db SLUDGE
+db MEGA_DRAIN
+db FURY_ATTACK
 db 0 ; growth rate
 ; learnset
 db %00000000

@@ -13,10 +13,10 @@ INCBIN "pic/bmon/arcanine.pic",0,1 ; 77, sprite dimensions
 dw ArcaninePicFront
 dw ArcaninePicBack
 ; attacks known at lvl 0
-db EMBER
+db FLAME_WHEEL
 db LEER
-db TAKE_DOWN
-db 0
+db BITE
+db EMBER
 db 5 ; growth rate
 ; learnset
 db %10100000

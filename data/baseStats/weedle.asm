@@ -13,10 +13,10 @@ INCBIN "pic/bmon/weedle.pic",0,1 ; 55, sprite dimensions
 dw WeedlePicFront
 dw WeedlePicBack
 ; attacks known at lvl 0
-db POISON_STING
-db STRING_SHOT
-db 0
-db 0
+db TWINEEDLE
+db SLUDGE
+db MEGA_DRAIN
+db FURY_ATTACK
 db 0 ; growth rate
 ; learnset
 db %00000000

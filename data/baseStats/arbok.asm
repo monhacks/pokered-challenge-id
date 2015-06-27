@@ -13,10 +13,10 @@ INCBIN "pic/bmon/arbok.pic",0,1 ; 77, sprite dimensions
 dw ArbokPicFront
 dw ArbokPicBack
 ; attacks known at lvl 0
-db WRAP
+db BITE
 db LEER
-db POISON_STING
-db 0
+db ACID
+db SLUDGE
 db 0 ; growth rate
 ; learnset
 db %10100000

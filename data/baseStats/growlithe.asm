@@ -13,10 +13,10 @@ INCBIN "pic/bmon/growlithe.pic",0,1 ; 55, sprite dimensions
 dw GrowlithePicFront
 dw GrowlithePicBack
 ; attacks known at lvl 0
+db FLAME_WHEEL
+db LEER
 db BITE
 db EMBER
-db 0
-db 0
 db 5 ; growth rate
 ; learnset
 db %10100000

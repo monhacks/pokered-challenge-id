@@ -13,10 +13,10 @@ INCBIN "pic/bmon/ekans.pic",0,1 ; 55, sprite dimensions
 dw EkansPicFront
 dw EkansPicBack
 ; attacks known at lvl 0
-db WRAP
+db BITE
 db LEER
-db 0
-db 0
+db ACID
+db SLUDGE
 db 0 ; growth rate
 ; learnset
 db %10100000

@@ -13,10 +13,10 @@ INCBIN "pic/bmon/clefairy.pic",0,1 ; 55, sprite dimensions
 dw ClefairyPicFront
 dw ClefairyPicBack
 ; attacks known at lvl 0
-db POUND
-db GROWL
-db 0
-db 0
+db SING
+db TAKE_DOWN
+db SEISMIC_TOSS
+db METRONOME
 db 4 ; growth rate
 ; learnset
 db %10110001

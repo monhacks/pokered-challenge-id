@@ -13,10 +13,10 @@ INCBIN "pic/bmon/charmander.pic",0,1 ; 55, sprite dimensions
 dw CharmanderPicFront
 dw CharmanderPicBack
 ; attacks known at lvl 0
-db SCRATCH
-db GROWL
-db 0
-db 0
+db FLAME_WHEEL
+db SWIFT
+db MIMIC
+db LEER
 db 3 ; growth rate
 ; learnset
 db %10110101

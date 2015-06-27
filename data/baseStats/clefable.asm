@@ -14,8 +14,8 @@ dw ClefablePicFront
 dw ClefablePicBack
 ; attacks known at lvl 0
 db SING
-db DOUBLESLAP
-db MINIMIZE
+db TAKE_DOWN
+db SEISMIC_TOSS
 db METRONOME
 db 4 ; growth rate
 ; learnset

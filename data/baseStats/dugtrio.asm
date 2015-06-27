@@ -13,10 +13,10 @@ INCBIN "pic/bmon/dugtrio.pic",0,1 ; 66, sprite dimensions
 dw DugtrioPicFront
 dw DugtrioPicBack
 ; attacks known at lvl 0
-db SCRATCH
+db SLASH
 db GROWL
+db RAGE
 db DIG
-db 0
 db 0 ; growth rate
 ; learnset
 db %10100000
@@ -25,9 +25,5 @@ db %00001000
 db %11001110
 db %00000010
 db %10001000
-IF DEF(_YELLOW)
-	db %00000110
-ELSE
-	db %00000010
-ENDC
+db %00000010
 db 0 ; padding

@@ -13,10 +13,10 @@ INCBIN "pic/bmon/electabuzz.pic",0,1 ; 66, sprite dimensions
 dw ElectabuzzPicFront
 dw ElectabuzzPicBack
 ; attacks known at lvl 0
-db QUICK_ATTACK
+db SWIFT
 db LEER
-db 0
-db 0
+db THUNDERSHOCK
+db SEISMIC_TOSS
 db 0 ; growth rate
 ; learnset
 db %10110001
