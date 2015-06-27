@@ -115,22 +115,8 @@ VermilionGymTrainerHeader0: ; 5caf8 (17:4af8)
 	dw VermilionGymEndBattleText1 ; 0x4b9f TextEndBattle
 
 VermilionGymTrainerHeader1: ; 5cb04 (17:4b04)
-	db $3 ; flag's bit
-	db ($2 << 4) ; trainer's view range
-	dw wd773 ; flag's byte
-	dw VermilionGymBattleText2 ; 0x4bb3 TextBeforeBattle
-	dw VermilionGymAfterBattleText2 ; 0x4bbd TextAfterBattle
-	dw VermilionGymEndBattleText2 ; 0x4bb8 TextEndBattle
-	dw VermilionGymEndBattleText2 ; 0x4bb8 TextEndBattle
 
 VermilionGymTrainerHeader2: ; 5cb10 (17:4b10)
-	db $4 ; flag's bit
-	db ($3 << 4) ; trainer's view range
-	dw wd773 ; flag's byte
-	dw VermilionGymBattleText3 ; 0x4bcc TextBeforeBattle
-	dw VermilionGymAfterBattleText3 ; 0x4bd6 TextAfterBattle
-	dw VermilionGymEndBattleText3 ; 0x4bd1 TextEndBattle
-	dw VermilionGymEndBattleText3 ; 0x4bd1 TextEndBattle
 
 	db $ff
 

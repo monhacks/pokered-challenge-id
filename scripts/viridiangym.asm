@@ -201,43 +201,15 @@ ViridianGymTextPointers: ; 749ec (1d:49ec)
 
 ViridianGymTrainerHeaders: ; 74a08 (1d:4a08)
 ViridianGymTrainerHeader0: ; 74a08 (1d:4a08)
-	db $2 ; flag's bit
-	db ($4 << 4) ; trainer's view range
-	dw wd751 ; flag's byte
-	dw ViridianGymBattleText1 ; 0x4afd TextBeforeBattle
-	dw ViridianGymAfterBattleText1 ; 0x4b07 TextAfterBattle
-	dw ViridianGymEndBattleText1 ; 0x4b02 TextEndBattle
-	dw ViridianGymEndBattleText1 ; 0x4b02 TextEndBattle
 
 ViridianGymTrainerHeader1: ; 74a14 (1d:4a14)
-	db $3 ; flag's bit
-	db ($4 << 4) ; trainer's view range
-	dw wd751 ; flag's byte
-	dw ViridianGymBattleText2 ; 0x4b16 TextBeforeBattle
-	dw ViridianGymAfterBattleText2 ; 0x4b20 TextAfterBattle
-	dw ViridianGymEndBattleText2 ; 0x4b1b TextEndBattle
-	dw ViridianGymEndBattleText2 ; 0x4b1b TextEndBattle
 
 ViridianGymTrainerHeader2: ; 74a20 (1d:4a20)
-	db $4 ; flag's bit
-	db ($4 << 4) ; trainer's view range
-	dw wd751 ; flag's byte
-	dw ViridianGymBattleText3 ; 0x4b2f TextBeforeBattle
-	dw ViridianGymAfterBattleText3 ; 0x4b39 TextAfterBattle
-	dw ViridianGymEndBattleText3 ; 0x4b34 TextEndBattle
-	dw ViridianGymEndBattleText3 ; 0x4b34 TextEndBattle
 
 ViridianGymTrainerHeader3: ; 74a2c (1d:4a2c)
-	db $5 ; flag's bit
-	db ($2 << 4) ; trainer's view range
-	dw wd751 ; flag's byte
-	dw ViridianGymBattleText4 ; 0x4b48 TextBeforeBattle
-	dw ViridianGymAfterBattleText4 ; 0x4b52 TextAfterBattle
-	dw ViridianGymEndBattleText4 ; 0x4b4d TextEndBattle
-	dw ViridianGymEndBattleText4 ; 0x4b4d TextEndBattle
 
 ViridianGymTrainerHeader4: ; 74a38 (1d:4a38)
-	db $6 ; flag's bit
+	db $2 ; flag's bit
 	db ($3 << 4) ; trainer's view range
 	dw wd751 ; flag's byte
 	dw ViridianGymBattleText5 ; 0x4b61 TextBeforeBattle
@@ -246,31 +218,10 @@ ViridianGymTrainerHeader4: ; 74a38 (1d:4a38)
 	dw ViridianGymEndBattleText5 ; 0x4b66 TextEndBattle
 
 ViridianGymTrainerHeader5: ; 74a44 (1d:4a44)
-	db $7 ; flag's bit
-	db ($4 << 4) ; trainer's view range
-	dw wd751 ; flag's byte
-	dw ViridianGymBattleText6 ; 0x4b7a TextBeforeBattle
-	dw ViridianGymAfterBattleText6 ; 0x4b84 TextAfterBattle
-	dw ViridianGymEndBattleText6 ; 0x4b7f TextEndBattle
-	dw ViridianGymEndBattleText6 ; 0x4b7f TextEndBattle
 
 ViridianGymTrainerHeader6: ; 74a50 (1d:4a50)
-	db $8 ; flag's bit
-	db ($3 << 4) ; trainer's view range
-	dw wd751 ; flag's byte
-	dw ViridianGymBattleText7 ; 0x4b93 TextBeforeBattle
-	dw ViridianGymAfterBattleText7 ; 0x4b9d TextAfterBattle
-	dw ViridianGymEndBattleText7 ; 0x4b98 TextEndBattle
-	dw ViridianGymEndBattleText7 ; 0x4b98 TextEndBattle
 
 ViridianGymTrainerHeader7: ; 74a5c (1d:4a5c)
-	db $9 ; flag's bit
-	db ($4 << 4) ; trainer's view range
-	dw wd751 ; flag's byte
-	dw ViridianGymBattleText8 ; 0x4bac TextBeforeBattle
-	dw ViridianGymAfterBattleText8 ; 0x4bb6 TextAfterBattle
-	dw ViridianGymEndBattleText8 ; 0x4bb1 TextEndBattle
-	dw ViridianGymEndBattleText8 ; 0x4bb1 TextEndBattle
 
 	db $ff
 

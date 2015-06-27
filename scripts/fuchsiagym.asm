@@ -89,16 +89,9 @@ FuchsiaGymTextPointers: ; 754d5 (1d:54d5)
 
 FuchsiaGymTrainerHeaders: ; 754eb (1d:54eb)
 FuchsiaGymTrainerHeader0: ; 754eb (1d:54eb)
-	db $2 ; flag's bit
-	db ($2 << 4) ; trainer's view range
-	dw wd792 ; flag's byte
-	dw FuchsiaGymBattleText1 ; 0x55ae TextBeforeBattle
-	dw FuchsiaGymAfterBattleText1 ; 0x55b8 TextAfterBattle
-	dw FuchsiaGymEndBattleText1 ; 0x55b3 TextEndBattle
-	dw FuchsiaGymEndBattleText1 ; 0x55b3 TextEndBattle
 
 FuchsiaGymTrainerHeader2: ; 754f7 (1d:54f7)
-	db $3 ; flag's bit
+	db $2 ; flag's bit
 	db ($2 << 4) ; trainer's view range
 	dw wd792 ; flag's byte
 	dw FuchsiaGymBattleText2 ; 0x55c7 TextBeforeBattle
@@ -107,40 +100,12 @@ FuchsiaGymTrainerHeader2: ; 754f7 (1d:54f7)
 	dw FuchsiaGymEndBattleText2 ; 0x55cc TextEndBattle
 
 FuchsiaGymTrainerHeader3: ; 75503 (1d:5503)
-	db $4 ; flag's bit
-	db ($4 << 4) ; trainer's view range
-	dw wd792 ; flag's byte
-	dw FuchsiaGymBattleText3 ; 0x55e0 TextBeforeBattle
-	dw FuchsiaGymAfterBattleText3 ; 0x55ea TextAfterBattle
-	dw FuchsiaGymEndBattleText3 ; 0x55e5 TextEndBattle
-	dw FuchsiaGymEndBattleText3 ; 0x55e5 TextEndBattle
 
 FuchsiaGymTrainerHeader4: ; 7550f (1d:550f)
-	db $5 ; flag's bit
-	db ($2 << 4) ; trainer's view range
-	dw wd792 ; flag's byte
-	dw FuchsiaGymBattleText4 ; 0x55f9 TextBeforeBattle
-	dw FuchsiaGymAfterBattleText4 ; 0x5603 TextAfterBattle
-	dw FuchsiaGymEndBattleText4 ; 0x55fe TextEndBattle
-	dw FuchsiaGymEndBattleText4 ; 0x55fe TextEndBattle
 
 FuchsiaGymTrainerHeader5: ; 7551b (1d:551b)
-	db $6 ; flag's bit
-	db ($2 << 4) ; trainer's view range
-	dw wd792 ; flag's byte
-	dw FuchsiaGymBattleText5 ; 0x5612 TextBeforeBattle
-	dw FuchsiaGymAfterBattleText5 ; 0x561c TextAfterBattle
-	dw FuchsiaGymEndBattleText5 ; 0x5617 TextEndBattle
-	dw FuchsiaGymEndBattleText5 ; 0x5617 TextEndBattle
 
 FuchsiaGymTrainerHeader6: ; 75527 (1d:5527)
-	db $7 ; flag's bit
-	db ($2 << 4) ; trainer's view range
-	dw wd792 ; flag's byte
-	dw FuchsiaGymBattleText6 ; 0x562b TextBeforeBattle
-	dw FuchsiaGymAfterBattleText6 ; 0x5635 TextAfterBattle
-	dw FuchsiaGymEndBattleText6 ; 0x5630 TextEndBattle
-	dw FuchsiaGymEndBattleText6 ; 0x5630 TextEndBattle
 
 	db $ff
 

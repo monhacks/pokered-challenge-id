@@ -15,32 +15,6 @@ CinnabarIslandScriptPointers: ; 1ca34 (7:4a34)
 	dw CinnabarIslandScript1
 
 CinnabarIslandScript0: ; 1ca38 (7:4a38)
-	ld b, SECRET_KEY
-	call IsItemInBag
-	ret nz
-	ld a, [W_YCOORD]
-	cp $4
-	ret nz
-	ld a, [W_XCOORD]
-	cp $12
-	ret nz
-	ld a, $8
-	ld [wd528], a
-	ld a, $8
-	ld [$ff8c], a
-	call DisplayTextID
-	xor a
-	ld [hJoyHeld], a
-	ld a, $1
-	ld [wSimulatedJoypadStatesIndex], a
-	ld a, D_DOWN
-	ld [wSimulatedJoypadStatesEnd], a
-	call StartSimulatingJoypadStates
-	xor a
-	ld [wSpriteStateData1 + 9], a
-	ld [wJoyIgnore], a
-	ld a, $1
-	ld [W_CINNABARISLANDCURSCRIPT], a
 	ret
 
 CinnabarIslandScript1: ; 1ca73 (7:4a73)

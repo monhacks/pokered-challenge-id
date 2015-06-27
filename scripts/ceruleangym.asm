@@ -94,14 +94,6 @@ CeruleanGymTrainerHeader0: ; 5c758 (17:4758)
 	dw CeruleanGymEndBattleText1 ; 0x47ee TextEndBattle
 
 CeruleanGymTrainerHeader1: ; 5c764 (17:4764)
-	db $3 ; flag's bit
-	db ($3 << 4) ; trainer's view range
-	dw wd75e ; flag's byte
-	dw CeruleanGymBattleText2 ; 0x4802 TextBeforeBattle
-	dw CeruleanGymAfterBattleText2 ; 0x480c TextAfterBattle
-	dw CeruleanGymEndBattleText2 ; 0x4807 TextEndBattle
-	dw CeruleanGymEndBattleText2 ; 0x4807 TextEndBattle
-
 	db $ff
 
 CeruleanGymText1: ; 5c771 (17:4771)

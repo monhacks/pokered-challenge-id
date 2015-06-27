@@ -39,8 +39,8 @@ SaffronGymObject: ; 0x5d259 (size=330)
 
 	db $3 ; people
 	db SPRITE_GIRL, $8 + 4, $9 + 4, $ff, $d0, TRAINER | $1, SABRINA + $C8, $1
-	db SPRITE_BUG_CATCHER, $b + 4, $9 + 4, $ff, $d3, TRAINER | $2, PSYCHIC_TR + $C8, $1
-	db SPRITE_GYM_HELPER, $f + 4, $a + 4, $ff, $d0, $3 ; person
+	db SPRITE_BUG_CATCHER, $b + 4, $9 + 4, $ff, $d3, TRAINER | $3, PSYCHIC_TR + $C8, $1
+	db SPRITE_GYM_HELPER, $f + 4, $a + 4, $ff, $d0, $9 ; person
 
 	; warp-to
 	EVENT_DISP SAFFRON_GYM_WIDTH, $11, $8
