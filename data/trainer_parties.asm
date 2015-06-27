@@ -359,10 +359,10 @@ BlackbeltData: ; 3a1be (e:61be)
 	db 38,MACHOKE,MACHOP,MACHOKE,0
 	db 43,MACHOKE,MACHOP,MACHOKE,0
 Green1Data: ; 3a1e4 (e:61e4)
-; testing new system
-    db $FE,5,SQUIRTLE,SPLASH,$FF,$FF,$FF,0
-    db $FE,5,BULBASAUR,SPLASH,$FF,$FF,$FF,0
-    db $FE,5,CHARMANDER,SPLASH,$FF,$FF,$FF,0
+; null out the lab fights
+    db 0
+    db 0
+    db 0
 	db $FF,9,PIDGEY,8,SQUIRTLE,0
 	db $FF,9,PIDGEY,8,BULBASAUR,0
 	db $FF,9,PIDGEY,8,CHARMANDER,0

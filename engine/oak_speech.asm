@@ -51,7 +51,7 @@ OakSpeech: ; 6115 (1:6115)
 ; fly points
     ld a, %11111111
     ld [W_TOWNVISITEDFLAG], a
-    ld a, %00000111
+    ld a, %00000101 ; not indigo plateau
     ld [W_TOWNVISITEDFLAG+1], a
 	ld a,[W_ANIMATIONID]
 	ld [wDestinationMap],a

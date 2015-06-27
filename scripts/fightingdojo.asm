@@ -264,7 +264,7 @@ FightingDojoText6: ; 5cf06 (17:4f06)
 	call PrintText
 	jr .done
 .GetMon
-	ld a, HITMONLEE
+	ld a, MAGIKARP
 	call DisplayPokedex
 	ld hl, WantHitmonleeText
 	call PrintText
@@ -274,7 +274,7 @@ FightingDojoText6: ; 5cf06 (17:4f06)
 	jr nz, .done
 	ld a, [wcf91]
 	ld b, a
-	ld c, 30
+	ld c, 1
 	call GivePokemon
 	jr nc, .done
 
@@ -302,7 +302,7 @@ FightingDojoText7: ; 5cf4e (17:4f4e)
 	call PrintText
 	jr .done
 .GetMon
-	ld a, HITMONCHAN
+	ld a, MAGIKARP
 	call DisplayPokedex
 	ld hl, WantHitmonchanText
 	call PrintText
@@ -312,7 +312,7 @@ FightingDojoText7: ; 5cf4e (17:4f4e)
 	jr nz, .done
 	ld a, [wcf91]
 	ld b, a
-	ld c,30
+	ld c,1
 	call GivePokemon
 	jr nc, .done
 	ld hl, wd7b1
