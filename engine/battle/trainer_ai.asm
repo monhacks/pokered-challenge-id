@@ -1,7 +1,7 @@
 ; creates a set of moves that may be used and returns its address in hl
 ; unused slots are filled with 0, all used slots may be chosen with equal probability
 AIEnemyTrainerChooseMoves: ; 39719 (e:5719)
-	ld a, $a
+	ld a, $14 ; changed to give us more breathing room
 	ld hl, wHPBarMaxHP  ; init temporary move selection array. Only the moves with the lowest numbers are chosen in the end
 	ld [hli], a   ; move 1
 	ld [hli], a   ; move 2
@@ -107,7 +107,7 @@ AIMoveChoiceModificationFunctionPointers: ; 397a3 (e:57a3)
 	dw AIMoveChoiceModification1
 	dw AIMoveChoiceModification2
 	dw AIMoveChoiceModification3
-	dw AIMoveChoiceModification4 ; unused, does nothing
+	dw SmartAI ; unused, does nothing
 
 ; discourages moves that cause no damage but only a status ailment if player's mon already has one
 AIMoveChoiceModification1: ; 397ab (e:57ab)
@@ -141,7 +141,7 @@ AIMoveChoiceModification1: ; 397ab (e:57ab)
 	pop hl
 	jr nc, .nextMove
 	ld a, [hl]
-	add $5 ; heavily discourage move
+	add $20 ; heavily discourage move
 	ld [hl], a
 	jr .nextMove
 
@@ -151,6 +151,241 @@ StatusAilmentMoveEffects ; 57e2
 	db POISON_EFFECT
 	db PARALYZE_EFFECT
 	db $FF
+    
+SmartAI:
+; damaging move priority on turn 3+
+    ld a, [wAILayer2Encouragement]
+    cp $2
+    jr c, .healingcheck
+    ld hl, wBuffer - 1
+    ld de, wEnemyMonMoves
+    ld b, NUM_MOVES + 1
+.damageloop
+    dec b
+    jr z, .healingcheck
+    inc hl
+    ld a, [de]
+    and a
+    jr z, .healingcheck
+    inc de
+    call ReadMove
+    ld a, [W_ENEMYMOVEPOWER]
+	and a
+    jr z, .damageloop
+; encourage by 2
+    dec [hl]
+    dec [hl]
+    jr .damageloop
+; healing moves?
+.healingcheck
+    ld a, [wEnemyMonMaxHP]
+    and a
+    jr z, .noscale
+    ld b, a
+    ld a, [wEnemyMonMaxHP+1]
+    srl b
+    rr a
+    ld b, a
+    ld a, [wEnemyMonHP]
+    ld c, a
+    ld a, [wEnemyMonHP+1]
+    srl c
+    rr a
+    ld c, a
+    jr .realhealcheck
+.noscale
+    ld a, [wEnemyMonMaxHP+1]
+    ld b, a
+    ld a, [wEnemyMonHP+1]
+    ld c, a
+.realhealcheck
+    srl b
+    ld a, c
+    cp b
+    jr nc, .effectivenesscheck
+    ld hl, HealingMoves
+    ld b, -8
+    call AlterMovePriorityArray
+.effectivenesscheck
+; encourage any damaging move with SE; slightly discourage any NVE move but not by as much
+    ld hl, wBuffer - 1
+    ld de, wEnemyMonMoves
+    ld b, NUM_MOVES + 1
+.seloop
+    dec b
+    jr z, .selfbuffcheck
+    inc hl
+    ld a, [de]
+    and a
+    jr z, .selfbuffcheck
+    inc de
+    call ReadMove
+    ld a, [W_ENEMYMOVEPOWER]
+	and a
+    jr z, .seloop
+    push hl
+	push bc
+	push de
+	callab AIGetTypeEffectiveness
+	pop de
+	pop bc
+	pop hl
+    ld a, [wd11e]
+    cp $0a
+    jr z, .seloop
+    jr c, .nvemove
+; strongly encourage (SE)
+    rept 4
+    dec [hl]
+    endr
+    cp $15
+    jr c, .seloop
+; even more strongly encourage 4x SE
+    rept 3
+    dec [hl]
+    endr
+    jr .seloop
+.nvemove
+; slightly discourage
+    inc [hl]
+    and a
+    jr nz, .seloop
+; strongly discourage immunity
+    ld a, [hl]
+    add 50
+    ld [hl], a
+    jr .seloop
+.selfbuffcheck
+; strongly encourage self-buff or status on turn 1
+    ld a, [wAILayer2Encouragement]
+    and a
+    ret nz
+    ld hl, MehStatusMoves
+    ld b, -3
+    call AlterMovePriorityArray
+    ld hl, LightBuffStatusMoves
+    ld b, -5
+    call AlterMovePriorityArray
+    ld hl, HeavyBuffStatusMoves
+    ld b, -6
+    call AlterMovePriorityArray
+    ret
+    
+MehStatusMoves:
+    db GROWL
+    db DISABLE
+    db MIST
+    db HARDEN
+    db WITHDRAW
+    db DEFENSE_CURL
+    db TAIL_WHIP
+    db LEER
+    db $FF
+    
+LightBuffStatusMoves:
+    db GROWTH
+    db MEDITATE
+    db AGILITY
+    db MINIMIZE
+    db DOUBLE_TEAM
+    db REFLECT
+    db LIGHT_SCREEN
+    db BARRIER
+    db SUBSTITUTE
+    db POISONPOWDER
+    db STRING_SHOT
+    db SCREECH
+    db SMOKESCREEN
+    db POISON_GAS
+    db FLASH
+    db SHARPEN
+    db SAND_ATTACK
+    db $FF
+
+HeavyBuffStatusMoves:
+    db SWORDS_DANCE
+    db AMNESIA
+    db SING
+    db SLEEP_POWDER
+    db HYPNOSIS
+    db LOVELY_KISS
+    db SPORE
+    db STUN_SPORE
+    db THUNDER_WAVE
+    db GLARE
+    db CONFUSE_RAY
+    db SUPERSONIC
+    db $FF
+    
+HealingMoves:
+    db REST
+    db RECOVER
+    db SOFTBOILED
+    db $FF
+
+AlterMovePriority:
+; [W_AIBUFFER1] = move
+; b = priority change
+    ld hl, wBuffer - 1
+    ld de, wEnemyMonMoves
+    ld c, NUM_MOVES+1
+.moveloop
+    dec c
+    ret z
+    inc hl
+    ld a, [de]
+    and a
+    ret z
+    inc de
+    push bc
+    ld b, a
+    ld a, [W_AIBUFFER1]
+    cp b
+    pop bc
+    jr nz, .moveloop
+    ld a, [hl]
+    add b
+    ld [hl], a
+    ret
+    
+AlterMovePriorityArray:
+; hl = move array
+; b = priority change
+    ld a, h
+    ld [W_AIBUFFER1], a
+    ld a, l
+    ld [W_AIBUFFER2], a
+    ld hl, wBuffer - 1
+    ld de, wEnemyMonMoves
+    ld c, NUM_MOVES+1
+.moveloop
+    dec c
+    ret z
+    inc hl
+    ld a, [de]
+    and a
+    ret z
+    inc de
+    push hl
+	push de
+	push bc
+    ld b, a
+    ld a, [W_AIBUFFER1]
+    ld h, a
+    ld a, [W_AIBUFFER2]
+    ld l, a
+    ld a, b
+	ld de, $0001
+	call IsInArray
+	pop bc
+	pop de
+	pop hl
+    jr nc, .moveloop
+    ld a, [hl]
+    add b
+    ld [hl], a
+    ret
+    
 
 ; slightly encourage moves with specific effects.
 ; in particular, stat-modifying moves and other move effects
@@ -304,25 +539,25 @@ TrainerClassMoveChoiceModifications: ; 3989b (e:589b)
 	db 1,3,0  ; PROF_OAK
 	db 1,2,0  ; CHIEF
 	db 1,2,0  ; SCIENTIST
-	db 1,3,0  ; GIOVANNI
+	db 1,4,0  ; GIOVANNI
 	db 1,0    ; ROCKET
 	db 1,3,0  ; COOLTRAINER_M
 	db 1,3,0  ; COOLTRAINER_F
-	db 1,0    ; BRUNO
-	db 1,0    ; BROCK
-	db 1,3,0  ; MISTY
-	db 1,3,0  ; LT__SURGE
-	db 1,3,0  ; ERIKA
-	db 1,3,0  ; KOGA
-	db 1,3,0  ; BLAINE
-	db 1,3,0  ; SABRINA
+	db 1,4,0    ; BRUNO
+	db 1,4,0    ; BROCK
+	db 1,4,0  ; MISTY
+	db 1,4,0    ; LT__SURGE
+	db 1,4,0  ; ERIKA
+	db 1,4,0  ; KOGA
+	db 1,4,0  ; BLAINE
+	db 1,4,0  ; SABRINA
 	db 1,2,0  ; GENTLEMAN
 	db 1,3,0  ; SONY2
-	db 1,3,0  ; SONY3
-	db 1,2,3,0; LORELEI
+	db 1,4,0  ; SONY3
+	db 1,4,0  ; LORELEI
 	db 1,0    ; CHANNELER
-	db 1,0    ; AGATHA
-	db 1,3,0  ; LANCE
+	db 1,4,0    ; AGATHA
+	db 1,4,0  ; LANCE
 
 INCLUDE "engine/battle/trainer_pic_money_pointers.asm"
 	
