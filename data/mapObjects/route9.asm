@@ -16,4 +16,4 @@ Route9Object: ; 0x546a8 (size=86)
 	db SPRITE_BUG_CATCHER, $2 + 4, $16 + 4, $ff, $d0, TRAINER | $7, BUG_CATCHER + $C8, $d
 	db SPRITE_HIKER, $f + 4, $2d + 4, $ff, $d3, TRAINER | $8, HIKER + $C8, $5
 	db SPRITE_BUG_CATCHER, $8 + 4, $28 + 4, $ff, $d3, TRAINER | $9, BUG_CATCHER + $C8, $e
-	db SPRITE_BALL, $f + 4, $a + 4, $ff, $ff, ITEM | $a, TM_30
+	db SPRITE_BALL, $f + 4, $a + 4, $ff, $ff, ITEM | $a, NUGGET

@@ -13,4 +13,4 @@ Route24Object: ; 0x506a4 (size=67)
 	db SPRITE_BUG_CATCHER, $19 + 4, $b + 4, $ff, $d2, TRAINER | $5, YOUNGSTER + $C8, $4
 	db SPRITE_LASS, $1c + 4, $a + 4, $ff, $d3, TRAINER | $6, LASS + $C8, $8
 	db SPRITE_BUG_CATCHER, $1f + 4, $b + 4, $ff, $d2, TRAINER | $7, BUG_CATCHER + $C8, $9
-	db SPRITE_BALL, $5 + 4, $a + 4, $ff, $ff, ITEM | $8, TM_45
+	db SPRITE_BALL, $5 + 4, $a + 4, $ff, $ff, ITEM | $8, NUGGET

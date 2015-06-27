@@ -24,7 +24,7 @@ MtMoon1Object: ; 0x49b06 (size=145)
 	db SPRITE_BALL, $1f + 4, $23 + 4, $ff, $ff, ITEM | $a, NUGGET
 	db SPRITE_BALL, $17 + 4, $24 + 4, $ff, $ff, ITEM | $b, ESCAPE_ROPE
 	db SPRITE_BALL, $21 + 4, $14 + 4, $ff, $ff, ITEM | $c, POTION
-	db SPRITE_BALL, $20 + 4, $5 + 4, $ff, $ff, ITEM | $d, TM_12
+	db SPRITE_BALL, $20 + 4, $5 + 4, $ff, $ff, ITEM | $d, NUGGET
 
 	; warp-to
 	EVENT_DISP MT_MOON_1_WIDTH, $23, $e

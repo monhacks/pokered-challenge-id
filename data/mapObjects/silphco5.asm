@@ -18,7 +18,7 @@ SilphCo5Object: ; 0x1a08d (size=137)
 	db SPRITE_OAK_AIDE, $3 + 4, $8 + 4, $ff, $d3, TRAINER | $3, SCIENTIST + $C8, $6
 	db SPRITE_ROCKER, $a + 4, $12 + 4, $ff, $d1, TRAINER | $4, JUGGLER + $C8, $1
 	db SPRITE_ROCKET, $4 + 4, $1c + 4, $ff, $d1, TRAINER | $5, ROCKET + $C8, $1d
-	db SPRITE_BALL, $d + 4, $2 + 4, $ff, $ff, ITEM | $6, TM_09
+	db SPRITE_BALL, $d + 4, $2 + 4, $ff, $ff, ITEM | $6, NUGGET
 	db SPRITE_BALL, $6 + 4, $4 + 4, $ff, $ff, ITEM | $7, PROTEIN
 	db SPRITE_BALL, $10 + 4, $15 + 4, $ff, $ff, ITEM | $8, CARD_KEY
 	db SPRITE_CLIPBOARD, $c + 4, $16 + 4, $ff, $ff, $9 ; person

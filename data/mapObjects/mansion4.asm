@@ -11,8 +11,8 @@ Mansion4Object: ; 0x52498 (size=69)
 	db SPRITE_OAK_AIDE, $b + 4, $1b + 4, $ff, $d0, TRAINER | $2, SCIENTIST + $C8, $d
 	db SPRITE_BALL, $2 + 4, $a + 4, $ff, $ff, ITEM | $3, NUGGET
 	db SPRITE_BALL, $16 + 4, $1 + 4, $ff, $ff, ITEM | $4, FULL_RESTORE
-	db SPRITE_BALL, $19 + 4, $13 + 4, $ff, $ff, ITEM | $5, TM_14
-	db SPRITE_BALL, $4 + 4, $5 + 4, $ff, $ff, ITEM | $6, TM_22
+	db SPRITE_BALL, $19 + 4, $13 + 4, $ff, $ff, ITEM | $5, NUGGET
+	db SPRITE_BALL, $4 + 4, $5 + 4, $ff, $ff, ITEM | $6, NUGGET
 	db SPRITE_BOOK_MAP_DEX, $14 + 4, $10 + 4, $ff, $ff, $7 ; person
 	db SPRITE_BALL, $d + 4, $5 + 4, $ff, $ff, ITEM | $8, SECRET_KEY
 

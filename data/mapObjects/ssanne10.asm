@@ -25,7 +25,7 @@ SSAnne10Object: ; 0x61e75 (size=165)
 	db SPRITE_BLACK_HAIR_BOY_2, $d + 4, $a + 4, $ff, $d3, $7 ; person
 	db SPRITE_SLOWBRO, $c + 4, $b + 4, $ff, $ff, $8 ; person
 	db SPRITE_BALL, $2 + 4, $14 + 4, $ff, $ff, ITEM | $9, ETHER
-	db SPRITE_BALL, $2 + 4, $a + 4, $ff, $ff, ITEM | $a, TM_44
+	db SPRITE_BALL, $2 + 4, $a + 4, $ff, $ff, ITEM | $a, NUGGET
 	db SPRITE_BALL, $b + 4, $c + 4, $ff, $ff, ITEM | $b, MAX_POTION
 
 	; warp-to

@@ -21,7 +21,7 @@ SSAnne8Object: ; 0x61a60 (size=127)
 	db SPRITE_LITTLE_GIRL, $b + 4, $2 + 4, $ff, $d0, $7 ; person
 	db SPRITE_CLEFAIRY, $b + 4, $3 + 4, $ff, $d0, $8 ; person
 	db SPRITE_GIRL, $d + 4, $a + 4, $ff, $d3, $9 ; person
-	db SPRITE_BALL, $f + 4, $c + 4, $ff, $ff, ITEM | $a, TM_08
+	db SPRITE_BALL, $f + 4, $c + 4, $ff, $ff, ITEM | $a, NUGGET
 	db SPRITE_GENTLEMAN, $d + 4, $15 + 4, $fe, $2, $b ; person
 
 	; warp-to

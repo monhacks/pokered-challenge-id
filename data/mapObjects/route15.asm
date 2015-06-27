@@ -21,7 +21,7 @@ Route15Object: ; 0x5894e (size=126)
 	db SPRITE_BIKER, $a + 4, $2e + 4, $ff, $d0, TRAINER | $8, BIKER + $C8, $4
 	db SPRITE_LASS, $5 + 4, $25 + 4, $ff, $d3, TRAINER | $9, JR__TRAINER_F + $C8, $16
 	db SPRITE_LASS, $d + 4, $12 + 4, $ff, $d1, TRAINER | $a, JR__TRAINER_F + $C8, $17
-	db SPRITE_BALL, $5 + 4, $12 + 4, $ff, $ff, ITEM | $b, TM_20
+	db SPRITE_BALL, $5 + 4, $12 + 4, $ff, $ff, ITEM | $b, NUGGET
 
 	; warp-to
 	EVENT_DISP ROUTE_15_WIDTH, $8, $7 ; ROUTE_15_GATE_1F

@@ -17,7 +17,7 @@ Route25Object: ; 0x507b2 (size=94)
 	db SPRITE_HIKER, $4 + 4, $8 + 4, $ff, $d3, TRAINER | $7, HIKER + $C8, $2
 	db SPRITE_HIKER, $9 + 4, $17 + 4, $ff, $d1, TRAINER | $8, HIKER + $C8, $3
 	db SPRITE_HIKER, $7 + 4, $d + 4, $ff, $d3, TRAINER | $9, HIKER + $C8, $4
-	db SPRITE_BALL, $2 + 4, $16 + 4, $ff, $ff, ITEM | $a, TM_19
+	db SPRITE_BALL, $2 + 4, $16 + 4, $ff, $ff, ITEM | $a, NUGGET
 
 	; warp-to
 	EVENT_DISP ROUTE_25_WIDTH, $3, $2d ; BILLS_HOUSE

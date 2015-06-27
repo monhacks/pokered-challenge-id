@@ -21,8 +21,8 @@ PowerPlantObject: ; 0x1e3bf (size=135)
 	db SPRITE_BALL, $19 + 4, $7 + 4, $ff, $ff, ITEM | $a, CARBOS
 	db SPRITE_BALL, $3 + 4, $1c + 4, $ff, $ff, ITEM | $b, HP_UP
 	db SPRITE_BALL, $3 + 4, $22 + 4, $ff, $ff, ITEM | $c, NUGGET
-	db SPRITE_BALL, $20 + 4, $1a + 4, $ff, $ff, ITEM | $d, TM_25
-	db SPRITE_BALL, $20 + 4, $14 + 4, $ff, $ff, ITEM | $e, TM_33
+	db SPRITE_BALL, $20 + 4, $1a + 4, $ff, $ff, ITEM | $d, NUGGET
+	db SPRITE_BALL, $20 + 4, $14 + 4, $ff, $ff, ITEM | $e, NUGGET
 
 	; warp-to
 	EVENT_DISP POWER_PLANT_WIDTH, $23, $4

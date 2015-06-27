@@ -22,7 +22,7 @@ SilphCo7Object: ; 0x51ed7 (size=128)
 	db SPRITE_ROCKET, $e + 4, $13 + 4, $ff, $d3, TRAINER | $8, ROCKET + $C8, $22
 	db SPRITE_BLUE, $7 + 4, $3 + 4, $ff, $d1, $9 ; person
 	db SPRITE_BALL, $9 + 4, $1 + 4, $ff, $ff, ITEM | $a, CALCIUM
-	db SPRITE_BALL, $b + 4, $18 + 4, $ff, $ff, ITEM | $b, TM_03
+	db SPRITE_BALL, $b + 4, $18 + 4, $ff, $ff, ITEM | $b, NUGGET
 
 	; warp-to
 	EVENT_DISP SILPH_CO_7F_WIDTH, $0, $10 ; SILPH_CO_8F

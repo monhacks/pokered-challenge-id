@@ -20,7 +20,7 @@ Route12Object: ; 0x5869a (size=118)
 	db SPRITE_FISHER2, $28 + 4, $c + 4, $ff, $d2, TRAINER | $6, FISHER + $C8, $5
 	db SPRITE_FISHER2, $34 + 4, $9 + 4, $ff, $d3, TRAINER | $7, FISHER + $C8, $6
 	db SPRITE_FISHER2, $57 + 4, $6 + 4, $ff, $d0, TRAINER | $8, FISHER + $C8, $b
-	db SPRITE_BALL, $23 + 4, $e + 4, $ff, $ff, ITEM | $9, TM_16
+	db SPRITE_BALL, $23 + 4, $e + 4, $ff, $ff, ITEM | $9, NUGGET
 	db SPRITE_BALL, $59 + 4, $5 + 4, $ff, $ff, ITEM | $a, IRON
 
 	; warp-to
