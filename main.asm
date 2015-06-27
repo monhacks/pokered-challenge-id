@@ -5896,7 +5896,7 @@ Route20Blocks: INCBIN "maps/route20.blk"
 
 INCLUDE "data/mapHeaders/route23.asm"
 INCLUDE "data/mapObjects/route23.asm"
-Route23Blocks: INCBIN "maps/route23.blk"
+Route23Blocks: INCBIN "maps/route23_mod.blk"
 
 INCLUDE "data/mapHeaders/route24.asm"
 INCLUDE "data/mapObjects/route24.asm"
