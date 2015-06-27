@@ -48,6 +48,11 @@ OakSpeech: ; 6115 (1:6115)
 	ld a,5
 	ld [wcf96],a
 	call AddItemToInventory  ; give 4 balls
+; fly points
+    ld a, %11111111
+    ld [W_TOWNVISITEDFLAG], a
+    ld a, %00000111
+    ld [W_TOWNVISITEDFLAG+1], a
 	ld a,[W_ANIMATIONID]
 	ld [wDestinationMap],a
 	call SpecialWarpIn

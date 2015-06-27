@@ -10,6 +10,7 @@ StarterDex: ; 5c0dc (17:40dc)
 	predef ShowPokedexData
     pop af
     ld [wd11e], a
+    ld [wcf91], a
 	xor a ; unset starter flags
 	ld [wPokedexOwned + (DEX_MEW-1)/8], a ; wPokedexOwned
 	ret

@@ -58,20 +58,17 @@ ENDC
 
 _OaksLabCharmanderText:: ; 94e06 (25:4e06)
 	text "So! You want the"
-	line "fire #MON,"
-	cont "CHARMANDER?"
+	line "MEW on the left?"
 	done
 
 _OaksLabSquirtleText:: ; 94e2f (25:4e2f)
 	text "So! You want the"
-	line "water #MON,"
-	cont "SQUIRTLE?"
+	line "MEW in the middle?"
 	done
 
 _OaksLabBulbasaurText:: ; 94e57 (25:4e57)
 	text "So! You want the"
-	line "plant #MON,"
-	cont "BULBASAUR?"
+	line "MEW on the right?"
 	done
 
 _OaksLabMonEnergeticText:: ; 94e80 (25:4e80)
@@ -362,9 +359,7 @@ _OaksLabOakGivesText::
 
 _OaksLabReceivedText::
 	text $52," received"
-	line "a "
-	TX_RAM $CD6D
-	text "!@@"
+	line "a MEW!@@"
 ENDC
 
 _OaksLabLeavingText:: ; 95427 (25:5427)

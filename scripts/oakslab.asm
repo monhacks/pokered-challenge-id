@@ -876,7 +876,6 @@ OaksLabMonChoiceMenu: ; 1d1b3 (7:51b3)
 	ld a, [wcf91]
 	ld [W_PLAYERSTARTER], a
 	ld [wd11e], a
-	call GetMonName
 	ld a, [wSpriteIndex]
 	cp $2
 	jr nz, asm_1d1db ; 0x1d1d5 $4
@@ -904,6 +903,8 @@ asm_1d1e5: ; 1d1e5 (7:51e5)
 	ld [W_CURENEMYLVL], a
 	ld a, MEW
 	ld [wd11e], a
+    ld [wcf91], a
+    call GetMonName
 	call AddPartyMon
 	ld hl, wd72e
 	set 3, [hl]
@@ -960,7 +961,7 @@ OaksLabText5: ; 1d248 (7:5248)
 	predef DisplayDexRating
 	jp .asm_0f042
 .asm_b28b0 ; 0x1d279
-	ld b,POKE_BALL
+	ld b,MAX_ELIXER
 	call IsItemInBag
 	jr nz, .asm_17c30 ; 0x1d27e
 	ld a, [wd7eb]
@@ -1004,7 +1005,7 @@ OaksLabText5: ; 1d248 (7:5248)
 	bit 4, [hl]
 	set 4, [hl]
 	jr nz, .asm_17c30 ; 0x1d2d7
-	ld bc, (POTION << 8) | 5
+	ld bc, (MAX_ELIXER << 8) | 5
 	call GiveItem
 	ld hl, OaksLabGivePokeballsText
 	call PrintText
