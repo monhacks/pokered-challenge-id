@@ -13,10 +13,10 @@ INCBIN "pic/bmon/muk.pic",0,1 ; 77, sprite dimensions
 dw MukPicFront
 dw MukPicBack
 ; attacks known at lvl 0
-db POUND
+db SLUDGE
 db DISABLE
 db POISON_GAS
-db 0
+db BODY_SLAM
 db 0 ; growth rate
 ; learnset
 db %10100000

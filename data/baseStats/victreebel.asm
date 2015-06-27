@@ -13,10 +13,10 @@ INCBIN "pic/bmon/victreebel.pic",0,1 ; 77, sprite dimensions
 dw VictreebelPicFront
 dw VictreebelPicBack
 ; attacks known at lvl 0
-db SLEEP_POWDER
-db STUN_SPORE
-db ACID
-db RAZOR_LEAF
+db SLUDGE
+db VINE_WHIP
+db LEECH_SEED
+db TAKE_DOWN
 db 3 ; growth rate
 ; learnset
 db %10100100

@@ -13,10 +13,10 @@ INCBIN "pic/bmon/lickitung.pic",0,1 ; 77, sprite dimensions
 dw LickitungPicFront
 dw LickitungPicBack
 ; attacks known at lvl 0
-db WRAP
+db MEGA_KICK
 db SUPERSONIC
-db 0
-db 0
+db SEISMIC_TOSS
+db FLAME_WHEEL
 db 0 ; growth rate
 ; learnset
 db %10110101

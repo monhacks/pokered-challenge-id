@@ -14,9 +14,9 @@ dw PinsirPicFront
 dw PinsirPicBack
 ; attacks known at lvl 0
 db VICEGRIP
-db 0
-db 0
-db 0
+db TWINEEDLE
+db BIND
+db SLASH
 db 5 ; growth rate
 ; learnset
 db %10100100

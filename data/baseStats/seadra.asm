@@ -13,10 +13,10 @@ INCBIN "pic/bmon/seadra.pic",0,1 ; 66, sprite dimensions
 dw SeadraPicFront
 dw SeadraPicBack
 ; attacks known at lvl 0
-db BUBBLE
+db AURORA_BEAM
 db SMOKESCREEN
-db 0
-db 0
+db BUBBLEBEAM
+db SWIFT
 db 0 ; growth rate
 ; learnset
 db %00100000

@@ -15,8 +15,8 @@ dw SnorlaxPicBack
 ; attacks known at lvl 0
 db HEADBUTT
 db AMNESIA
-db REST
-db 0
+db BUBBLEBEAM
+db SOLARBEAM
 db 5 ; growth rate
 ; learnset
 db %10110001

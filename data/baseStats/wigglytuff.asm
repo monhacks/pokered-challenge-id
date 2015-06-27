@@ -14,9 +14,9 @@ dw WigglytuffPicFront
 dw WigglytuffPicBack
 ; attacks known at lvl 0
 db SING
-db DISABLE
-db DEFENSE_CURL
-db DOUBLESLAP
+db REFLECT
+db DOUBLE_EDGE
+db METRONOME
 db 4 ; growth rate
 ; learnset
 db %10110001

@@ -13,10 +13,10 @@ INCBIN "pic/bmon/ivysaur.pic",0,1 ; 66, sprite dimensions
 dw IvysaurPicFront
 dw IvysaurPicBack
 ; attacks known at lvl 0
-db TACKLE
-db GROWL
+db SLUDGE
+db RAZOR_LEAF
 db LEECH_SEED
-db 0
+db TAKE_DOWN
 db 3 ; growth rate
 ; learnset
 db %10100100

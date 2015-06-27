@@ -14,9 +14,9 @@ dw RhyhornPicFront
 dw RhyhornPicBack
 ; attacks known at lvl 0
 db HORN_ATTACK
-db 0
-db 0
-db 0
+db AURORA_BEAM
+db BONE_CLUB
+db BUBBLEBEAM
 db 5 ; growth rate
 ; learnset
 db %11100000

@@ -14,9 +14,9 @@ dw JigglypuffPicFront
 dw JigglypuffPicBack
 ; attacks known at lvl 0
 db SING
-db 0
-db 0
-db 0
+db REFLECT
+db DOUBLE_EDGE
+db METRONOME
 db 4 ; growth rate
 ; learnset
 db %10110001

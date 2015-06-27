@@ -15,8 +15,8 @@ dw MrMimePicBack
 ; attacks known at lvl 0
 db CONFUSION
 db BARRIER
-db 0
-db 0
+db BODY_SLAM
+db SOLARBEAM
 db 0 ; growth rate
 ; learnset
 db %10110001

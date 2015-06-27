@@ -13,10 +13,10 @@ INCBIN "pic/bmon/paras.pic",0,1 ; 55, sprite dimensions
 dw ParasPicFront
 dw ParasPicBack
 ; attacks known at lvl 0
-db SCRATCH
-db 0
-db 0
-db 0
+db SPORE
+db STUN_SPORE
+db MEGA_DRAIN
+db SLASH
 db 0 ; growth rate
 ; learnset
 db %10100100

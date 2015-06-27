@@ -13,10 +13,10 @@ INCBIN "pic/bmon/onix.pic",0,1 ; 77, sprite dimensions
 dw OnixPicFront
 dw OnixPicBack
 ; attacks known at lvl 0
-db TACKLE
+db DIG
 db SCREECH
-db 0
-db 0
+db BIND
+db TAKE_DOWN
 db 0 ; growth rate
 ; learnset
 db %10100000

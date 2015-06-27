@@ -13,10 +13,10 @@ INCBIN "pic/bmon/vulpix.pic",0,1 ; 66, sprite dimensions
 dw VulpixPicFront
 dw VulpixPicBack
 ; attacks known at lvl 0
-db EMBER
+db FLAME_WHEEL
 db TAIL_WHIP
-db 0
-db 0
+db TAKE_DOWN
+db CONFUSE_RAY
 db 0 ; growth rate
 ; learnset
 db %10100000

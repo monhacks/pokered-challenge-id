@@ -13,14 +13,10 @@ INCBIN "pic/bmon/vaporeon.pic",0,1 ; 66, sprite dimensions
 dw VaporeonPicFront
 dw VaporeonPicBack
 ; attacks known at lvl 0
-db TACKLE
-IF DEF(_YELLOW)
-	db TAIL_WHIP
-ELSE
-	db SAND_ATTACK
-ENDC
+db TAKE_DOWN
+db TAIL_WHIP
 db QUICK_ATTACK
-db WATER_GUN
+db BUBBLEBEAM
 db 0 ; growth rate
 ; learnset
 db %10100000

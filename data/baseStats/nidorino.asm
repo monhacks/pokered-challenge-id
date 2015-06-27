@@ -13,10 +13,10 @@ INCBIN "pic/bmon/nidorino.pic",0,1 ; 66, sprite dimensions
 dw NidorinoPicFront
 dw NidorinoPicBack
 ; attacks known at lvl 0
+db THRASH
+db BONE_CLUB
+db SLUDGE
 db LEER
-db TACKLE
-db HORN_ATTACK
-db 0
 db 3 ; growth rate
 ; learnset
 db %11100000

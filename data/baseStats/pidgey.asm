@@ -13,10 +13,10 @@ INCBIN "pic/bmon/pidgey.pic",0,1 ; 55, sprite dimensions
 dw PidgeyPicFront
 dw PidgeyPicBack
 ; attacks known at lvl 0
+db SKY_ATTACK
+db SAND_ATTACK
 db GUST
-db 0
-db 0
-db 0
+db REFLECT
 db 3 ; growth rate
 ; learnset
 db %00101010

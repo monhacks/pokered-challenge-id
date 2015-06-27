@@ -13,10 +13,10 @@ INCBIN "pic/bmon/mankey.pic",0,1 ; 55, sprite dimensions
 dw MankeyPicFront
 dw MankeyPicBack
 ; attacks known at lvl 0
-db SCRATCH
-db LEER
-db 0
-db 0
+db ROCK_THROW
+db KARATE_CHOP
+db FURY_SWIPES
+db LOW_KICK
 db 0 ; growth rate
 ; learnset
 db %10110001

@@ -13,10 +13,10 @@ INCBIN "pic/bmon/horsea.pic",0,1 ; 55, sprite dimensions
 dw HorseaPicFront
 dw HorseaPicBack
 ; attacks known at lvl 0
-db BUBBLE
-db 0
-db 0
-db 0
+db AURORA_BEAM
+db SMOKESCREEN
+db BUBBLEBEAM
+db SWIFT
 db 0 ; growth rate
 ; learnset
 db %00100000

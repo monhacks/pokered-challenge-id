@@ -13,10 +13,10 @@ INCBIN "pic/bmon/lapras.pic",0,1 ; 77, sprite dimensions
 dw LaprasPicFront
 dw LaprasPicBack
 ; attacks known at lvl 0
-db WATER_GUN
-db GROWL
-db 0
-db 0
+db BUBBLEBEAM
+db CONFUSE_RAY
+db AURORA_BEAM
+db SING
 db 5 ; growth rate
 ; learnset
 db %11100000

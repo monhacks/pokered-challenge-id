@@ -13,10 +13,10 @@ INCBIN "pic/bmon/ninetales.pic",0,1 ; 77, sprite dimensions
 dw NinetalesPicFront
 dw NinetalesPicBack
 ; attacks known at lvl 0
-db EMBER
+db FLAME_WHEEL
 db TAIL_WHIP
-db QUICK_ATTACK
-db 0
+db TAKE_DOWN
+db CONFUSE_RAY
 db 0 ; growth rate
 ; learnset
 db %10100000

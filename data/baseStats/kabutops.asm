@@ -13,10 +13,10 @@ INCBIN "pic/bmon/kabutops.pic",0,1 ; 66, sprite dimensions
 dw KabutopsPicFront
 dw KabutopsPicBack
 ; attacks known at lvl 0
-db SCRATCH
-db HARDEN
-db ABSORB
-db 0
+db ROCK_THROW
+db SLASH
+db MEGA_DRAIN
+db BUBBLEBEAM
 db 0 ; growth rate
 ; learnset
 db %10110110

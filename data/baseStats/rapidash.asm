@@ -13,10 +13,10 @@ INCBIN "pic/bmon/rapidash.pic",0,1 ; 77, sprite dimensions
 dw RapidashPicFront
 dw RapidashPicBack
 ; attacks known at lvl 0
-db EMBER
+db FIRE_SPIN
 db TAIL_WHIP
 db STOMP
-db GROWL
+db LOW_KICK
 db 0 ; growth rate
 ; learnset
 db %11100000

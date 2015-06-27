@@ -13,15 +13,10 @@ INCBIN "pic/bmon/venomoth.pic",0,1 ; 77, sprite dimensions
 dw VenomothPicFront
 dw VenomothPicBack
 ; attacks known at lvl 0
-db TACKLE
-db DISABLE
-IF DEF(_YELLOW)
-	db SUPERSONIC
-	db CONFUSION
-ELSE
-	db POISONPOWDER
-	db LEECH_LIFE
-ENDC
+db SUPERSONIC
+db CONFUSION
+db SLUDGE
+db TWINEEDLE
 db 0 ; growth rate
 ; learnset
 db %00101010

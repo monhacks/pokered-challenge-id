@@ -13,10 +13,10 @@ INCBIN "pic/bmon/rattata.pic",0,1 ; 55, sprite dimensions
 dw RattataPicFront
 dw RattataPicBack
 ; attacks known at lvl 0
-db TACKLE
-db TAIL_WHIP
-db 0
-db 0
+db SUPER_FANG
+db AURORA_BEAM
+db BITE
+db SPARK
 db 0 ; growth rate
 ; learnset
 db %10100000

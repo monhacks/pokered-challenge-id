@@ -13,10 +13,10 @@ INCBIN "pic/bmon/poliwag.pic",0,1 ; 55, sprite dimensions
 dw PoliwagPicFront
 dw PoliwagPicBack
 ; attacks known at lvl 0
-db BUBBLE
-db 0
-db 0
-db 0
+db HYPNOSIS
+db WATER_GUN
+db ROLLING_KICK
+db BODY_SLAM
 db 3 ; growth rate
 ; learnset
 db %10100000

@@ -13,10 +13,10 @@ INCBIN "pic/bmon/bellsprout.pic",0,1 ; 55, sprite dimensions
 dw BellsproutPicFront
 dw BellsproutPicBack
 ; attacks known at lvl 0
+db SLUDGE
 db VINE_WHIP
-db GROWTH
-db 0
-db 0
+db LEECH_SEED
+db TAKE_DOWN
 db 3 ; growth rate
 ; learnset
 db %00100100

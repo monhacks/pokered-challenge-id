@@ -15,7 +15,7 @@ dw PoliwrathPicBack
 ; attacks known at lvl 0
 db HYPNOSIS
 db WATER_GUN
-db DOUBLESLAP
+db ROLLING_KICK
 db BODY_SLAM
 db 3 ; growth rate
 ; learnset

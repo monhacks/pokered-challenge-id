@@ -14,9 +14,9 @@ dw ZapdosPicFront
 dw ZapdosPicBack
 ; attacks known at lvl 0
 db THUNDERSHOCK
-db DRILL_PECK
-db 0
-db 0
+db AIR_CUTTER
+db THUNDER_WAVE
+db SWIFT
 db 5 ; growth rate
 ; learnset
 db %00101010

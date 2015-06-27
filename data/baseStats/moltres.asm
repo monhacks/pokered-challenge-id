@@ -13,10 +13,10 @@ INCBIN "pic/bmon/moltres.pic",0,1 ; 77, sprite dimensions
 dw MoltresPicFront
 dw MoltresPicBack
 ; attacks known at lvl 0
-db PECK
+db AIR_CUTTER
 db FIRE_SPIN
-db 0
-db 0
+db SWIFT
+db LEER
 db 5 ; growth rate
 ; learnset
 db %00101010

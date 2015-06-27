@@ -13,10 +13,10 @@ INCBIN "pic/bmon/tentacool.pic",0,1 ; 55, sprite dimensions
 dw TentacoolPicFront
 dw TentacoolPicBack
 ; attacks known at lvl 0
-db ACID
-db 0
-db 0
-db 0
+db SLUDGE
+db SUPERSONIC
+db WRAP
+db BUBBLEBEAM
 db 5 ; growth rate
 ; learnset
 db %00100100

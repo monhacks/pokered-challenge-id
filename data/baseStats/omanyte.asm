@@ -15,8 +15,8 @@ dw OmanytePicBack
 ; attacks known at lvl 0
 db WATER_GUN
 db WITHDRAW
-db 0
-db 0
+db HORN_ATTACK
+db AURORA_BEAM
 db 0 ; growth rate
 ; learnset
 db %10100000

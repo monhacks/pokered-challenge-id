@@ -13,10 +13,10 @@ INCBIN "pic/bmon/sandshrew.pic",0,1 ; 55, sprite dimensions
 dw SandshrewPicFront
 dw SandshrewPicBack
 ; attacks known at lvl 0
-db SCRATCH
-db 0
-db 0
-db 0
+db SLASH
+db SAND_ATTACK
+db BONE_CLUB
+db SLUDGE
 db 0 ; growth rate
 ; learnset
 db %10100100

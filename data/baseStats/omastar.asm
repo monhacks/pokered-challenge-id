@@ -16,7 +16,7 @@ dw OmastarPicBack
 db WATER_GUN
 db WITHDRAW
 db HORN_ATTACK
-db 0
+db AURORA_BEAM
 db 0 ; growth rate
 ; learnset
 db %11100000

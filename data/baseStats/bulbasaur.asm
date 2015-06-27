@@ -13,10 +13,10 @@ INCBIN "pic/bmon/bulbasaur.pic",0,1 ; 55, sprite dimensions
 dw BulbasaurPicFront
 dw BulbasaurPicBack
 ; attacks known at lvl 0
-db TACKLE
-db GROWL
-db 0
-db 0
+db SLUDGE
+db RAZOR_LEAF
+db LEECH_SEED
+db TAKE_DOWN
 db 3 ; growth rate
 ; learnset
 db %10100100

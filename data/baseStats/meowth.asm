@@ -13,10 +13,10 @@ INCBIN "pic/bmon/meowth.pic",0,1 ; 55, sprite dimensions
 dw MeowthPicFront
 dw MeowthPicBack
 ; attacks known at lvl 0
-db SCRATCH
-db GROWL
-db 0
-db 0
+db SPARK
+db BUBBLEBEAM
+db BITE
+db SCREECH
 db 0 ; growth rate
 ; learnset
 db %10100000

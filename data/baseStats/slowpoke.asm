@@ -14,9 +14,9 @@ dw SlowpokePicFront
 dw SlowpokePicBack
 ; attacks known at lvl 0
 db CONFUSION
-db 0
-db 0
-db 0
+db DISABLE
+db HEADBUTT
+db BUBBLEBEAM
 db 0 ; growth rate
 ; learnset
 db %10100000
