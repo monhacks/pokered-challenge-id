@@ -42,12 +42,12 @@ OakSpeech: ; 6115 (1:6115)
 	call LoadTextBoxTilePatterns
 	call SetDefaultNames
 	predef InitPlayerData2
-	ld hl,wNumBagItems
-	ld a,MASTER_BALL
-	ld [wcf91],a
-	ld a,5
-	ld [wcf96],a
-	call AddItemToInventory  ; give 4 balls
+    ld a, MASTER_BALL
+    ld b, 5
+    call ItemHelper
+    ld a, POKE_DOLL
+    ld b, 99
+    call ItemHelper
 ; fly points
     ld a, %11111111
     ld [W_TOWNVISITEDFLAG], a
@@ -187,6 +187,13 @@ FadeInIntroPic: ; 6271 (1:6271)
 	dec b
 	jr nz,.next
 	ret
+    
+ItemHelper::
+    ld hl,wNumBagItems
+	ld [wcf91],a
+	ld a,b
+	ld [wcf96],a
+	jp AddItemToInventory
 
 IntroFadePalettes: ; 6282 (1:6282)
 	db %01010100
