@@ -49,7 +49,7 @@ _ReceivedTM38Text:: ; a09a8 (28:49a8)
 
 _TM38ExplanationText:: ; a09bc (28:49bc)
 	db $0
-	para "TM38 contains"
+	para "TM22 contains"
 	line "FIRE BLAST!"
 
 	para "Teach it to fire-"

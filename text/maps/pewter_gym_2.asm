@@ -37,7 +37,7 @@ _TM34PreReceiveText:: ; 98092 (26:4092)
 
 _ReceivedTM34Text:: ; 980ad (26:40ad)
 	text $52, " received"
-	line "TM34!@@"
+	line "TM16!@@"
 
 _TM34ExplanationText:: ; 980c0 (26:40c0)
 	db $0
@@ -53,13 +53,8 @@ _TM34ExplanationText:: ; 980c0 (26:40c0)
 	cont "pick the #MON"
 	cont "carefully!"
 
-	para "TM34 contains"
-	line "BIDE!"
-
-	para "Your #MON will"
-	line "absorb damage in"
-	cont "battle then pay"
-	cont "it back double!"
+	para "TM16 contains"
+	line "ROCK SLIDE!"
 	done
 
 _TM34NoRoomText:: ; 981ab (26:41ab)
@@ -87,14 +82,6 @@ _PewterGymText_5c4c1:: ; 98232 (26:4232)
 	para "Its bearer's"
 	line "#MON become"
 	cont "more powerful!"
-
-	para "The technique"
-	line "FLASH can now be"
-IF DEF(_YELLOW)
-	cont "used anytime!"
-ELSE
-	cont "used any time!"
-ENDC
 	prompt
 
 _PewterGymBattleText1:: ; 982ae (26:42ae)

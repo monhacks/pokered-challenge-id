@@ -65,12 +65,13 @@ _ViridianGymText12:: ; 95fcc (25:5fcc)
 
 _ReceivedTM27Text:: ; 96082 (25:6082)
 	text $52, " received"
-	line "TM27!@@"
+	line "TM23!@@"
 
 _TM27ExplanationText:: ; 96095 (25:6095)
 	db $0
-	para "TM27 is FISSURE!"
-	line "It will take out"
+	para "TM23 is"
+    line "EARTHQUAKE!"
+	cont "It will take out"
 	cont "#MON with just"
 	cont "one hit!"
 

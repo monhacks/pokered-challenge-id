@@ -1,9 +1,7 @@
 _UnnamedText_7558b:: ; a0000 (28:4000)
 	text "When afflicted by"
-	line "TOXIC, #MON"
-	cont "suffer more and"
-	cont "more as battle"
-	cont "progresses!"
+	line "SLUDGE BOMB,"
+	cont "#MON hurt!"
 
 	para "It will surely"
 	line "terrorize foes!"
@@ -15,10 +13,6 @@ _UnnamedText_75590:: ; a0069 (28:4069)
 	cont "the DEFENSE of"
 	cont "your #MON"
 	cont "increases!"
-
-	para "It also lets you"
-	line "SURF outside of"
-	cont "battle!"
 
 	para "Ah! Take this"
 	line "too!"
@@ -32,8 +26,8 @@ _ReceivedTM06Text:: ; a00eb (28:40eb)
 
 _TM06ExplanationText:: ; a00ff (28:40ff)
 	db $0
-	para "TM06 contains"
-	line "TOXIC!"
+	para "TM20 contains"
+	line "SLUDGE BOMB!"
 
 	para "It is a secret"
 	line "technique over"

@@ -52,11 +52,6 @@ _CeladonGymText9:: ; 9d481 (27:5481)
 	line "will make #MON"
 	cont "up to L50 obey."
 
-	para "It also allows"
-	line "#MON to use"
-	cont "STRENGTH in and"
-	cont "out of battle."
-
 	para "Please also take"
 	line "this with you."
 	done
@@ -69,8 +64,8 @@ _ReceivedTM21Text:: ; 9d50c (27:550c)
 
 _TM21ExplanationText:: ; 9d520 (27:5520)
 	db $0
-	para "TM21 contains"
-	line "MEGA DRAIN."
+	para "TM19 contains"
+	line "GIGA DRAIN."
 
 	para "Half the damage"
 	line "it inflicts is"

@@ -15,14 +15,6 @@ _VermilionGymText_5cb77:: ; 9c069 (27:4069)
 	line "cranks up your"
 	cont "#MON's SPEED!"
 
-	para "It also lets your"
-IF DEF(_YELLOW)
-	line "#MON FLY any-"
-ELSE
-	line "#MON FLY any"
-ENDC
-	cont "time, kid!"
-
 	para "You're special,"
 	line "kid! Take this!"
 	done
@@ -35,7 +27,7 @@ _ReceivedTM24Text:: ; 9c0e0 (27:40e0)
 
 _TM24ExplanationText:: ; 9c0f5 (27:40f5)
 	db $0
-	para "TM24 contains"
+	para "TM18 contains"
 	line "THUNDERBOLT!"
 
 	para "Teach it to an"

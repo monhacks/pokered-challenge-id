@@ -56,11 +56,11 @@ _SaffronGymText_5d173:: ; a1d16 (28:5d16)
 
 ReceivedTM46Text:: ; a1dcd (28:5dcd)
 	text $52, " received"
-	line "TM46!@@"
+	line "TM21!@@"
 
 _TM46ExplanationText:: ; a1de0 (28:5de0)
 	db $0
-	para "TM46 is PSYWAVE!"
+	para "TM21 is PSYCHIC!"
 	line "It uses powerful"
 	cont "psychic waves to"
 	cont "inflict damage!"

@@ -33,8 +33,8 @@ ENDC
 	done
 
 _CeruleanGymText_5c7c3:: ; 98a7b (26:4a7b)
-	text "TM11 teaches"
-	line "BUBBLEBEAM!"
+	text "TM17 teaches"
+	line "SURF!"
 
 	para "Use it on an"
 	line "aquatic #MON!"
@@ -48,25 +48,13 @@ _CeruleanGymText_5c7c8:: ; 98ab0 (26:4ab0)
 	para "That includes"
 	line "even outsiders!"
 
-	para "There's more, you"
-	line "can now use CUT"
-IF DEF(_YELLOW)
-	cont "anytime!"
-ELSE
-	cont "any time!"
-ENDC
-
-	para "You can CUT down"
-	line "small bushes to"
-	cont "open new paths!"
-
 	para "You can also have"
 	line "my favorite TM!"
 	done
 
 _ReceivedTM11Text:: ; 98b7d (26:4b7d)
 	text $52, " received"
-	line "TM11!@@"
+	line "TM17!@@"
 
 _CeruleanGymText_5c7d3:: ; 98b90 (26:4b90)
 	text "You better make"
