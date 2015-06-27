@@ -495,9 +495,6 @@ CinnabarGymHiddenObjects: ; 46dee (11:6dee)
 	db $0d,$01,$05
 	db Bank(PrintCinnabarQuiz)
 	dw PrintCinnabarQuiz
-	db $07,$01,$16
-	db Bank(PrintCinnabarQuiz)
-	dw PrintCinnabarQuiz
 	db $FF
 CinnabarPokecenterHiddenObjects: ; 46e19 (11:6e19)
 	db $04,$00,$04
