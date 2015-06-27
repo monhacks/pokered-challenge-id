@@ -10,7 +10,7 @@ TrainerDataPointers: ; 39d3b (e:5d3b)
 	dw GentlemanData,Green2Data,Green3Data,LoreleiData,ChannelerData
 	dw AgathaData,LanceData
 
-; if first byte != FF, then
+; if first byte < FE, then
 	; first byte is level (of all pokemon on this team)
 	; all the next bytes are pokemon species
 	; null-terminated
@@ -18,6 +18,10 @@ TrainerDataPointers: ; 39d3b (e:5d3b)
 	; first byte is FF (obviously)
 	; every next two bytes are a level and species
 	; null-terminated
+; if first byte == FE then
+    ; first byte is FE (obviously)
+    ; next six bytes are a level, species, 4 moves (using FF for blank move to support null)
+    ; null-terminated
 
 YoungsterData: ; 39d99 (e:5d99)
 	db 11,RATTATA,EKANS,0
