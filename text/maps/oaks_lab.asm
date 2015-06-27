@@ -379,13 +379,13 @@ _OaksLabRivalReceivedMonText:: ; 95461 (25:5461)
 	text "!@@"
 
 _OaksLabRivalChallengeText:: ; 95477 (25:5477)
-	text $53, ": Wait"
-	line $52, "!"
-	cont "Let's check out"
-	cont "our #MON!"
+	text $53, ": Okay!"
+	line "I'll make my"
+	cont "#MON fight to"
+	cont "toughen it up!"
 
-	para "Come on, I'll take"
-	line "you on!"
+	para $52, "! Gramps!"
+	line "Smell you later!"
 	done
 
 _OaksLabText_1d3be:: ; 954b6 (25:54b6)
@@ -401,13 +401,7 @@ _OaksLabText_1d3c3:: ; 954e4 (25:54e4)
 	prompt
 
 _OaksLabRivalToughenUpText:: ; 95502 (25:5502)
-	text $53, ": Okay!"
-	line "I'll make my"
-	cont "#MON fight to"
-	cont "toughen it up!"
-
-	para $52, "! Gramps!"
-	line "Smell you later!"
+    text "lol"
 	done
 
 IF DEF(_YELLOW)

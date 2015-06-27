@@ -356,23 +356,7 @@ OaksLabScript11: ; 1cdb9 (7:4db9)
 	bit 0, a
 	ret nz
 
-	; define which team rival uses, and fight it
-	ld a, SONY1 + $C8
-	ld [W_CUROPPONENT], a
-	ld a, [W_RIVALSTARTER]
-	cp STARTER2
-	jr nz, .NotSquirtle ; 0x1cdc9 $4
-	ld a, $1
-	jr .done ; 0x1cdcd $a
-.NotSquirtle
-	cp STARTER3
-	jr nz, .Charmander ; 0x1cdd1 $4
-	ld a, $2
-	jr .done ; 0x1cdd5 $2
-.Charmander
-	ld a, $3
-.done
-	ld [W_TRAINERNO], a
+	; skip rival fight
 	ld a, $1
 	ld [wSpriteIndex], a
 	call GetSpritePosition1
@@ -415,9 +399,6 @@ OaksLabScript12: ; 1ce03 (7:4e03)
 OaksLabScript13: ; 1ce32 (7:4e32)
 	ld c, $14
 	call DelayFrames
-	ld a, $10
-	ld [$ff8c], a
-	call DisplayTextID
 	callba Music_RivalAlternateStart
 	ld a, $1
 	ld [H_SPRITEINDEX], a
