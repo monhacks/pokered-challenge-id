@@ -77,11 +77,11 @@ ItemPrices: ; 4608 (1:4608)
 	money 0     ; OLD_ROD
 	money 0     ; GOOD_ROD
 	money 0     ; SUPER_ROD
-	money 0     ; PP_UP
-	money 0     ; ETHER
-	money 0     ; MAX_ETHER
-	money 0     ; ELIXER
-	money 0     ; MAX_ELIXER
+	money 200000; PP_UP
+	money 5000     ; ETHER
+	money 15000     ; MAX_ETHER
+	money 20000     ; ELIXER
+	money 60000     ; MAX_ELIXER
 	money 0     ; B2F
 	money 0     ; B1F
 	money 0     ; 1F
