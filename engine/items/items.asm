@@ -2558,12 +2558,7 @@ IsKeyItem_: ; e764 (3:6764)
 	and a
 	ret nz
 .checkIfItemIsHM
-	ld a,[wcf91]
-	call IsItemHM
-	ret c
-	xor a
-	ld [wd124],a
-	ret
+	ret ; make TMs key items too
 
 INCLUDE "data/key_items.asm"
 

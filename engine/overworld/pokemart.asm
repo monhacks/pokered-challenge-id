@@ -162,6 +162,15 @@ DisplayPokemartDialogue_: ; 6c20 (1:6c20)
 .buyItem
 	call .isThereEnoughMoney
 	jr c,.notEnoughMoney
+    call IsKeyItem
+    ld a, [wd124]
+    and a
+    jr z, .addItem
+    ld a, [wcf91]
+    ld b, a
+    call IsItemInBag
+    jr nz,.bagFull
+.addItem
 	ld hl,wNumBagItems
 	call AddItemToInventory
 	jr nc,.bagFull
