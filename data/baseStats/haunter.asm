@@ -13,10 +13,10 @@ INCBIN "pic/bmon/haunter.pic",0,1 ; 66, sprite dimensions
 dw HaunterPicFront
 dw HaunterPicBack
 ; attacks known at lvl 0
-db LICK
+db SHADOW_PUNCH
 db CONFUSE_RAY
 db NIGHT_SHADE
-db 0
+db MEGA_PUNCH
 db 3 ; growth rate
 ; learnset
 db %00100000

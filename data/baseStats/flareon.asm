@@ -13,14 +13,10 @@ INCBIN "pic/bmon/flareon.pic",0,1 ; 66, sprite dimensions
 dw FlareonPicFront
 dw FlareonPicBack
 ; attacks known at lvl 0
-db TACKLE
-IF DEF(_YELLOW)
-	db TAIL_WHIP
-ELSE
-	db SAND_ATTACK
-ENDC
+db SWIFT
+db SAND_ATTACK
 db QUICK_ATTACK
-db EMBER
+db FLAME_WHEEL
 db 0 ; growth rate
 ; learnset
 db %10100000

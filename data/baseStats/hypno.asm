@@ -13,9 +13,9 @@ INCBIN "pic/bmon/hypno.pic",0,1 ; 77, sprite dimensions
 dw HypnoPicFront
 dw HypnoPicBack
 ; attacks known at lvl 0
-db POUND
+db HEADBUTT
 db HYPNOSIS
-db DISABLE
+db PSYWAVE
 db CONFUSION
 db 0 ; growth rate
 ; learnset

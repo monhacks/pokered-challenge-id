@@ -13,10 +13,10 @@ INCBIN "pic/bmon/magikarp.pic",0,1 ; 66, sprite dimensions
 dw MagikarpPicFront
 dw MagikarpPicBack
 ; attacks known at lvl 0
-db TACKLE
-db 0
-db 0
-db 0
+db BITE
+db DRAGON_RAGE
+db LEER
+db BUBBLEBEAM
 db 5 ; growth rate
 ; learnset
 db %00000000

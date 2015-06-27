@@ -13,14 +13,10 @@ INCBIN "pic/bmon/jolteon.pic",0,1 ; 66, sprite dimensions
 dw JolteonPicFront
 dw JolteonPicBack
 ; attacks known at lvl 0
-db TACKLE
-IF DEF(_YELLOW)
-	db TAIL_WHIP
-ELSE
-	db SAND_ATTACK
-ENDC
-db QUICK_ATTACK
-db THUNDERSHOCK
+db PIN_MISSILE
+db TAIL_WHIP
+db BODY_SLAM
+db SPARK
 db 0 ; growth rate
 ; learnset
 db %10100000

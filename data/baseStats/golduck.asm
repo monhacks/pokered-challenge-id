@@ -13,10 +13,10 @@ INCBIN "pic/bmon/golduck.pic",0,1 ; 77, sprite dimensions
 dw GolduckPicFront
 dw GolduckPicBack
 ; attacks known at lvl 0
-db SCRATCH
+db CONFUSION
 db TAIL_WHIP
-db DISABLE
-db 0
+db BUBBLEBEAM
+db TRI_ATTACK
 db 0 ; growth rate
 ; learnset
 db %10110001

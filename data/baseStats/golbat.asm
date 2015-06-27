@@ -13,10 +13,10 @@ INCBIN "pic/bmon/golbat.pic",0,1 ; 77, sprite dimensions
 dw GolbatPicFront
 dw GolbatPicBack
 ; attacks known at lvl 0
-db LEECH_LIFE
-db SCREECH
+db CONFUSE_RAY
+db AIR_CUTTER
 db BITE
-db 0
+db SLUDGE
 db 0 ; growth rate
 ; learnset
 db %00101010
