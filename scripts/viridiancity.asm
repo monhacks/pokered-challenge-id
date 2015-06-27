@@ -15,50 +15,11 @@ ViridianCityScript0: ; 19005 (6:5005)
 	jp ViridianCityScript_1903d
 
 ViridianCityScript_1900b: ; 1900b (6:500b)
-	ld a, [wd74c]
-	bit 0, a
-	ret nz
-	ld a, [W_OBTAINEDBADGES]
-	cp %01111111
-	jr nz, .asm_1901e ; 0x19016 $6
 	ld hl, wd74c
 	set 0, [hl]
 	ret
-.asm_1901e
-	ld a, [W_YCOORD]
-	cp $8
-	ret nz
-	ld a, [W_XCOORD]
-	cp $20
-	ret nz
-	ld a, $e
-	ld [$ff8c], a
-	call DisplayTextID
-	xor a
-	ld [hJoyHeld], a
-	call ViridianCityScript_190cf
-	ld a, $3
-	ld [W_VIRIDIANCITYCURSCRIPT], a
-	ret
 
 ViridianCityScript_1903d: ; 1903d (6:503d)
-	ld a, [wd74b]
-	bit 5, a
-	ret nz
-	ld a, [W_YCOORD]
-	cp $9
-	ret nz
-	ld a, [W_XCOORD]
-	cp $13
-	ret nz
-	ld a, $5
-	ld [$ff8c], a
-	call DisplayTextID
-	xor a
-	ld [hJoyHeld], a
-	call ViridianCityScript_190cf
-	ld a, $3
-	ld [W_VIRIDIANCITYCURSCRIPT], a
 	ret
 
 ViridianCityScript1: ; 19062 (6:5062)

@@ -26,7 +26,7 @@ SaffronCityObject: ; 0x509dc (size=188)
 	db $f ; people
 	db SPRITE_ROCKET, $6 + 4, $7 + 4, $ff, $ff, $1 ; person
 	db SPRITE_ROCKET, $8 + 4, $14 + 4, $fe, $2, $2 ; person
-	db SPRITE_ROCKET, $4 + 4, $22 + 4, $ff, $ff, $3 ; person
+	db SPRITE_ROCKET, $4 + 4, $1a + 4, $ff, $ff, $3 ; person rocket outside gym
 	db SPRITE_ROCKET, $c + 4, $d + 4, $ff, $ff, $4 ; person
 	db SPRITE_ROCKET, $19 + 4, $b + 4, $fe, $2, $5 ; person
 	db SPRITE_ROCKET, $d + 4, $20 + 4, $fe, $2, $6 ; person
