@@ -202,11 +202,15 @@ SmartAI:
     srl b
     ld a, c
     cp b
-    jr nc, .dreameatercheck
     ld hl, HealingMoves
+    jr nc, .debuffhealingmoves
     ld b, -8
+    jr .applyhealingchange
+.debuffhealingmoves
+    ld b, 10
+.applyhealingchange
     call AlterMovePriorityArray
-.dreameatercheck
+; dream eater check
     ld a, [wBattleMonStatus]
     and SLP
     ld a, DREAM_EATER

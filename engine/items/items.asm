@@ -2557,6 +2557,8 @@ IsKeyItem_: ; e764 (3:6764)
 	ld a,c
 	and a
 	ret nz
+    xor a
+    ld [wd124],a
 .checkIfItemIsHM
 	ret ; make TMs key items too
 
