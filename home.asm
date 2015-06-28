@@ -2022,7 +2022,7 @@ IsMoveHM:: ; 3049 (0:3049)
 	jp IsInArray
 
 HMMoves:: ; 3052 (0:3052)
-	db CUT,FLY,SURF,STRENGTH,FLASH
+	db CUT,FLY
 	db $ff ; terminator
 
 GetMoveName:: ; 3058 (0:3058)

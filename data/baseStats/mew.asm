@@ -14,9 +14,9 @@ dw MewPicFront
 dw MewPicBack
 ; attacks known at lvl 0
 db FLY
-db SURF
-db STRENGTH
 db CUT
+db 0
+db 0
 db 3 ; growth rate
 ; include learnset directly
 db %11111111
