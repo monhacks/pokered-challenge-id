@@ -2786,7 +2786,7 @@ AddItemToInventory_: ; ce04 (3:4e04)
 	push de
 	push hl
 	push hl
-	ld d,50 ; PC box can hold 50 items
+	ld d,MY_PC_SIZE ; PC box can hold 50 items
 	ld a,wNumBagItems & $FF
 	cp l
 	jr nz,.checkIfInventoryFull
@@ -2794,7 +2794,7 @@ AddItemToInventory_: ; ce04 (3:4e04)
 	cp h
 	jr nz,.checkIfInventoryFull
 ; if the destination is the bag
-	ld d,20 ; bag can hold 20 items
+	ld d,BAG_SIZE ; bag can hold 20 items
 .checkIfInventoryFull
 	ld a,[hl]
 	sub d

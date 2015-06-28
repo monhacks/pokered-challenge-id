@@ -1467,7 +1467,7 @@ wNumBagItems:: ; d31d
 	ds 1
 wBagItems:: ; d31e
 ; item, quantity
-	ds 20 * 2
+	ds BAG_SIZE * 2
 	ds 1 ; end
 
 wPlayerMoney:: ; d347
@@ -1699,7 +1699,7 @@ wNumBoxItems:: ; d53a
 	ds 1
 wBoxItems:: ; d53b
 ; item, quantity
-	ds 50 * 2
+	ds MY_PC_SIZE * 2
 	ds 1 ; end
 
 wd5a0:: ds 2 ; current box number
