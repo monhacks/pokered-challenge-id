@@ -339,7 +339,7 @@ MapHS28: ; cb68 (3:4b68)
 	db OAKS_LAB,$08,Hide
 MapHS2D: ; cb80 (3:4b80)
 	db VIRIDIAN_GYM,$01,Show
-	db VIRIDIAN_GYM,$0B,Show
+	db VIRIDIAN_GYM,$04,Show
 MapHS34: ; cb86 (3:4b86)
 	db MUSEUM_1F,$05,Show
 MapHSE4: ; cb89 (3:4b89)

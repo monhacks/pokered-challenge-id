@@ -187,14 +187,14 @@ ViridianGymTextPointers: ; 749ec (1d:49ec)
 	dw ViridianGymText1
 	dw ViridianGymText2
 	dw ViridianGymText3
-	dw ViridianGymText4
+	dw Predef5CText
 	dw ViridianGymText5
 	dw ViridianGymText6
 	dw ViridianGymText7
 	dw ViridianGymText8
 	dw ViridianGymText9
 	dw ViridianGymText10
-	dw Predef5CText
+	dw ViridianGymText4
 	dw ViridianGymText12
 	dw ViridianGymText13
 	dw ViridianGymText14
