@@ -21,30 +21,22 @@ Predef::
 	ld a, [wPredefBank]
 	ld [H_LOADEDROMBANK], a
 	ld [$2000], a
-
-	ld de, .done
-	push de
-	jp [hl]
-.done
+	
+	call .goToPredef
 
 	pop af
 	ld [H_LOADEDROMBANK], a
 	ld [$2000], a
 	ret
-
+	
+.goToPredef
+	push hl
+	ld hl,wPredefRegisters
+	ld a,[hli] ; get saved hl value
+	ld l,[hl]
+	ld h,a
 GetPredefRegisters::
 ; Restore the contents of register pairs
 ; when GetPredefPointer was called.
-	ld a, [wPredefRegisters + 0]
-	ld h, a
-	ld a, [wPredefRegisters + 1]
-	ld l, a
-	ld a, [wPredefRegisters + 2]
-	ld d, a
-	ld a, [wPredefRegisters + 3]
-	ld e, a
-	ld a, [wPredefRegisters + 4]
-	ld b, a
-	ld a, [wPredefRegisters + 5]
-	ld c, a
-	ret
+	ret ; return to hl
+

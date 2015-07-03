@@ -10,14 +10,15 @@ GetPredefPointer:
 	ld [wPredefRegisters + 1],a
 
 	ld hl,wPredefRegisters + 2
-	ld a,d
-	ld [hli],a
-	ld a,e
-	ld [hli],a
+	push de
+	;ld a,d
+	;ld [hli],a
+	;ld a,e
+	;ld [hli],a
 
-	ld a,b
-	ld [hli],a
-	ld [hl],c
+	;ld a,b
+	;ld [hli],a
+	;ld [hl],c
 
 	ld hl,PredefPointers
 	ld de,0
@@ -47,6 +48,7 @@ GetPredefPointer:
 	ld a,[de]
 	ld h,a
 
+	pop de
 	ret
 
 PredefPointers:: ; 4fe79 (13:7e79)
