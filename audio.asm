@@ -380,7 +380,7 @@ PlayBattleMusic:: ; 0x90c6
 	ld a, [W_CUROPPONENT]
 	cp $c8
 	jr c, .wildBattle
-	cp SONY3 + $c8
+	cp PROF_OAK + $c8
 	jr z, .finalBattle
 	cp LANCE + $c8
 	jr nz, .normalTrainerBattle

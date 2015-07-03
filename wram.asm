@@ -1462,13 +1462,13 @@ wPokedexSeen:: ; d30a
 	flag_array NUM_POKEMON
 wPokedexSeenEnd::
 
-
-wNumBagItems:: ; d31d
+wNumBoxItems:: ; d53a
 	ds 1
-wBagItems:: ; d31e
+wBoxItems:: ; d53b
 ; item, quantity
-	ds BAG_SIZE * 2
+	ds MY_PC_SIZE * 2
 	ds 1 ; end
+
 
 wPlayerMoney:: ; d347
 	ds 3 ; BCD
@@ -1695,11 +1695,11 @@ W_GRASSTILE:: ; d535
 
 	ds 4
 
-wNumBoxItems:: ; d53a
+wNumBagItems:: ; d31d
 	ds 1
-wBoxItems:: ; d53b
+wBagItems:: ; d31e
 ; item, quantity
-	ds MY_PC_SIZE * 2
+	ds BAG_SIZE * 2
 	ds 1 ; end
 
 wd5a0:: ds 2 ; current box number

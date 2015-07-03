@@ -1004,7 +1004,7 @@ TrainerBattleVictory: ; 3c696 (f:4696)
 	ld b, MUSIC_DEFEATED_TRAINER
 .gymleader
 	ld a, [W_TRAINERCLASS]
-	cp SONY3 ; final battle against rival
+	cp PROF_OAK ; final battle against rival
 	jr nz, .notrival
 	ld b, MUSIC_DEFEATED_GYM_LEADER
 	ld hl, W_FLAGS_D733

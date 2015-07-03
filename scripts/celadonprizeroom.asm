@@ -17,4 +17,5 @@ CeladonPrizeRoomText2: ; 49102 (12:5102)
 	db "@"
 
 CeladonPrizeRoomText3: ; 49107 (12:5107)
-	db $f7
+    text "No."
+	db "@@"
