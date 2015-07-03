@@ -334,7 +334,7 @@ wcc4d:: ds 1 ; used in sprite hiding/showing related operations
 wPredefID:: ; cc4e
 	ds 1
 wPredefRegisters:: ; cc4f
-	ds 6
+	ds 5
 
 wTrainerHeaderFlagBit:: ; cc55
 	ds 1
@@ -939,9 +939,9 @@ wEnemyMonAttack::    dw
 wEnemyMonDefense::   dw
 wEnemyMonSpeed::     dw
 wEnemyMonSpecial::   dw
-wEnemyMonPP::        ds 1 ; NUM_MOVES - 3
+wEnemyMonPP::        ds 2 ; NUM_MOVES - 2
 SECTION "WRAM Bank 1", WRAMX, BANK[1]
-                     ds 3 ; NUM_MOVES - 1
+                     ds 2 ; NUM_MOVES - 2
 
 wEnemyMonBaseStats:: ds 5
 wEnemyMonCatchRate:: ds 1
@@ -2305,12 +2305,4 @@ wStack:: ; dfff
 	ds -$100
 
 
-SECTION "Sprite Buffers", SRAM, BANK[0]
-
-S_SPRITEBUFFER0:: ds SPRITEBUFFERSIZE ; a000
-S_SPRITEBUFFER1:: ds SPRITEBUFFERSIZE ; a188
-S_SPRITEBUFFER2:: ds SPRITEBUFFERSIZE ; a310
-
-	ds $100
-
-sHallOfFame:: ds HOF_TEAM * NUM_HOF_TEAMS ; a598
+INCLUDE "sram.asm"

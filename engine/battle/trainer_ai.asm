@@ -181,6 +181,7 @@ SmartAI:
     ld a, [wEnemyMonMaxHP]
     and a
     jr z, .noscale
+; divide hp by four
     ld b, a
     ld a, [wEnemyMonMaxHP+1]
     srl b
@@ -199,21 +200,80 @@ SmartAI:
     ld a, [wEnemyMonHP+1]
     ld c, a
 .realhealcheck
-    srl b
+    push bc
+	srl b
     ld a, c
     cp b
     ld hl, HealingMoves
     jr nc, .debuffhealingmoves
-    ld b, -8
+	ld b, -8
     call Random
-    ld a, [hRandomAdd]
+    ; ld a, [hRandomAdd] ; Random already loads hRandomAdd into a
     cp $C0 ; 3/4 chance
-    jr nc, .dreameatercheck
+    jr nc, .explosioncheck
     jr .applyhealingchange
 .debuffhealingmoves
     ld b, 10
 .applyhealingchange
     call AlterMovePriorityArray
+.explosioncheck
+	pop bc
+	sra c
+	sra c
+	ld a,c
+	cp b ; HP 1/4 of total HP?
+	ld hl, ExplosionMoves
+	jr nc, .debuffexplosionmoves
+	ld b, -8
+	call Random
+	cp $c0 ; 3/4 chance
+	jr nc, .superfangcheck
+	jr .applyexplosionchange
+.debuffexplosionmoves
+	ld b, 10
+.applyexplosionchange
+	call AlterMovePriorityArray
+.superfangcheck
+	ld a,SUPER_FANG
+	ld [W_AIBUFFER1],a
+	ld a,[wEnemyMonHP]
+	ld b,a
+	ld a,[wEnemyMonHP+1]
+	ld c,a
+	ld h,b
+	ld l,c
+	add hl,bc ; scale current HP x4
+	add hl,bc
+	add hl,bc
+	ld c,l
+	ld b,h
+	
+	ld a,[wEnemyMonHPMax]
+	ld d,a
+	ld a,[wEnemyMonHPMax+1]
+	ld e,a
+	ld h,d
+	ld l,e
+	add hl,de ; scale total HP x3
+	add hl,de
+	ld e,l
+	ld d,h
+	
+	ld a,d ; wEnemyMonHPMax
+	cp b ; is 4 * current HP greater than 3 * max HP?
+	jr nc,.curHPgreater
+	ld a,e
+	cp c
+	ld b,$20
+	jr c,.curHPnotgreater
+.curHPgreater
+	ld b,-5
+	call Random
+	cp $c0
+	jr nc,.dreameatercheck
+.curHPnotgreater
+	call AlterMovePriority
+	
 ; dream eater check
 .dreameatercheck
     ld a, [wBattleMonStatus]
@@ -227,6 +287,7 @@ SmartAI:
     ld b, 20
 .applydreameater
     call AlterMovePriority
+
 .effectivenesscheck
 ; encourage any damaging move with SE; slightly discourage any NVE move but not by as much
     ld hl, wBuffer - 1
@@ -266,7 +327,7 @@ SmartAI:
     endr
     cp $15
     jr c, .seloop
-; even more strongly encourage 4x SE
+; strongly encourage 4x SE even more
     rept 3
     dec [hl]
     endr
@@ -353,7 +414,13 @@ HealingMoves:
     db SOFTBOILED
     db $FF
 
+ExplosionMoves:
+	db EXPLOSION
+	db SELFDESTRUCT
+	db $FF
+	
 AlterMovePriority:
+; look for move in W_AIBUFFER in wEnemyMonMoves
 ; [W_AIBUFFER1] = move
 ; b = priority change
     ld hl, wBuffer - 1
@@ -361,11 +428,11 @@ AlterMovePriority:
     ld c, NUM_MOVES+1
 .moveloop
     dec c
-    ret z
-    inc hl
+    jr z,.done
+	inc hl
     ld a, [de]
     and a
-    ret z
+    jr z,.done
     inc de
     push bc
     ld b, a
@@ -376,9 +443,11 @@ AlterMovePriority:
     ld a, [hl]
     add b
     ld [hl], a
+.done
     ret
     
 AlterMovePriorityArray:
+; find if the enemy mon's moveset has a move in move array hl
 ; hl = move array
 ; b = priority change
     ld a, h
