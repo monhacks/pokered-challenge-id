@@ -353,17 +353,17 @@ AIMoveChoiceModification1: ; 397ab (e:57ab)
 .reflectCheck
 	ld a,[W_PLAYERBATTSTATUS3]
 	bit HasReflectUp,a
-	ret z
+	jr z,.enemySubstituteCheck
 	ld hl, wBuffer - 1
     ld de, wEnemyMonMoves
     ld b, NUM_MOVES + 1
 .discouragePhysicalMovesLoop
     dec b
-    ret z
+    jr z,.enemySubstituteCheck
     inc hl
     ld a, [de]
     and a
-    ret z
+    jr z,.enemySubstituteCheck
     inc de
     call ReadMove
 	ld a,[W_ENEMYMOVETYPE]
@@ -373,7 +373,15 @@ AIMoveChoiceModification1: ; 397ab (e:57ab)
 	add $8
 	ld [hl],a
 	jr .discouragePhysicalMovesLoop
-
+.enemySubstituteCheck
+	ld a,[W_ENEMYBATTSTATUS2]
+	bit HasSubstituteUp,a
+	ret z
+	ld a,SUBSTITUTE
+	ld [W_AIBUFFER1],a
+	ld b,$10
+	jp AlterMovePriority
+	
 ConfusionMoves:
 	db SUPERSONIC
 	db CONFUSE_RAY
