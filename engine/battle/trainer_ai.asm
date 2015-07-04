@@ -113,17 +113,17 @@ AIMoveChoiceModificationFunctionPointers: ; 397a3 (e:57a3)
 AIMoveChoiceModification1: ; 397ab (e:57ab)
 	ld a, [wBattleMonStatus]
 	and a
-	ret z ; return if no status ailment on player's mon
+	jr z,.confusionCheck ; return if no status ailment on player's mon
 	ld hl, wBuffer - 1 ; temp move selection array (-1 byte offest)
 	ld de, wEnemyMonMoves ; enemy moves
 	ld b, NUM_MOVES + 1
 .nextMove
 	dec b
-	ret z ; processed all 4 moves
+	jr z,.confusionCheck ; processed all 4 moves
 	inc hl
 	ld a, [de]
 	and a
-	ret z ; no more moves in move set
+	jr z,.confusionCheck ; no more moves in move set
 	inc de
 	call ReadMove
 	ld a, [W_ENEMYMOVEPOWER]
@@ -144,7 +144,240 @@ AIMoveChoiceModification1: ; 397ab (e:57ab)
 	add $20 ; heavily discourage move
 	ld [hl], a
 	jr .nextMove
+.confusionCheck
+	ld a,[W_PLAYERBATTSTATUS1]
+	bit Confused,a
+	jr z,.digOrFlyCheck
+	ld hl,ConfusionMoves
+	ld b,$20
+	call AlterMovePriorityArray
+	ld a,[W_PLAYERBATTSTATUS1]
+.digOrFlyCheck
+	bit Invulnerable,a
+	jr z,.usingChargingMoveCheck
+	ld a,[wEnemyMonSpeed]
+	ld b,a
+	ld a,[wEnemyMonSpeed+1]
+	ld c,a
+	ld a,[wBattleMonSpeed]
+	ld d,a
+	ld a,[wBattleMonSpeed+1]
+	ld e,a
+	
+	ld a,d
+	cp b
+	jr c,.faster
+	ld a,e
+	cp c
+	jr nc,.usingChargingMoveCheck
+.faster
+	ld hl, wBuffer - 1
+    ld de, wEnemyMonMoves
+    ld b, NUM_MOVES + 1
+.invLoop
+    dec b
+    jr z, .bideCheck
+    inc hl
+    ld a, [de]
+    and a
+    jr z, .bideCheck
+    inc de
+    call ReadMove
+	ld a, [W_ENEMYMOVEPOWER]
+	cp 10
+    jr c, .invLoop
+    ld a, [W_ENEMYMOVEEFFECT]
+    cp MIRROR_MOVE_EFFECT
+	jr c, .invLoop
+	cp PAY_DAY_EFFECT
+	jr c, .foundusablemove
+	cp ATTACK_UP2_EFFECT
+	jr c, .invLoop
+	cp HEAL_EFFECT
+	jr c, .foundusablemove
+	push hl
+	push de
+	push bc
+	ld hl,UsableMoveEffectsDuringFlyOrDig
+	ld de,$1
+	call IsInArray
+	pop bc
+	pop de
+	pop hl
+	jr nc, .invLoop
+.foundusablemove
+	ld a,[hl]
+	add -8
+	ld [hl],a
+	jr .invLoop
+.usingChargingMoveCheck
+	ld a,[W_PLAYERBATTSTATUS1]
+	bit ChargingUp,a
+	jr z, .bideCheck
+	call Random
+	cp $c0
+	ld hl,DigOrFlyMoves
+	ld b,-16
+	jr c,.digorfly
+	ld hl,ParalyzeOrSleepMoves
+.digorfly
+	call AlterMovePriorityArray
+	ld a,[W_PLAYERBATTSTATUS1]
+.bideCheck
+	bit StoringEnergy,a
+	jr z,.mistCheck
+	ld hl, wBuffer - 1
+    ld de, wEnemyMonMoves
+    ld b, NUM_MOVES + 1
+.doesDamageLoop
+    dec b
+    jr z, .mistCheck
+    inc hl
+    ld a, [de]
+    and a
+    jr z, .mistCheck
+    inc de
+    call ReadMove
+	ld a, [W_ENEMYMOVEPOWER]
+	cp 10
+	jr nc,.discourageDamagingMove
+	ld a, [W_ENEMYMOVEEFFECT]
+	cp SPECIAL_DAMAGE_EFFECT
+	jr nz,.doesDamageLoop
+.discourageDamagingMove
+	ld a,[hl]
+	add $20
+	ld [hl],a
+	jr .doesDamageLoop
+.mistCheck
+	ld a,[W_PLAYERBATTSTATUS2]
+	bit ProtectedByMist,a
+	jr z, .substituteCheck
+	ld hl, wBuffer - 1
+    ld de, wEnemyMonMoves
+    ld b, NUM_MOVES + 1
+.statLoweringMoveLoop
+    dec b
+    jr z, .substituteCheck
+    inc hl
+    ld a, [de]
+    and a
+    jr z, .substituteCheck
+    inc de
+    call ReadMove
+	ld a,[W_ENEMYMOVEEFFECT]
+	ld c,-8
+	cp ATTACK_DOWN1_EFFECT
+	jr c,.statLoweringMoveLoop
+	cp CONVERSION_EFFECT
+	jr c,.foundStatLoweringMove
+	cp HAZE_EFFECT
+	jr z,.foundHazeEffect
+	cp ATTACK_DOWN2_EFFECT
+	jr c,.statLoweringMoveLoop
+	cp LIGHT_SCREEN_EFFECT
+	jr nc,.statLoweringMoveLoop
+.foundStatLoweringMove
+	ld c,$20
+.foundHazeEffect
+	ld a,[hl]
+	add c
+	ld [hl],a
+	jr .statLoweringMoveLoop
+.substituteCheck
+	ld a,[W_PLAYERBATTSTATUS2]
+	bit HasSubstituteUp,a
+	jr z,.seededCheck
+	ld hl, wBuffer - 1
+    ld de, wEnemyMonMoves
+    ld b, NUM_MOVES + 1
+.doesNotEffectSubstituteLoop
+    dec b
+    jr z, .seededCheck
+    inc hl
+    ld a, [de]
+    and a
+    jr z, .seededCheck
+    inc de
+    call ReadMove
+	cp ATTACK_DOWN1_EFFECT
+	jr c,.doesNotEffectSubstituteLoop
+	cp CONVERSION_EFFECT
+	jr c,.foundNonAffectingMove
+	cp ATTACK_DOWN2_EFFECT
+	jr c,.doesNotEffectSubstituteLoop
+	cp LIGHT_SCREEN_EFFECT
+	jr c,.foundNonAffectingMove
+	cp CONFUSION_EFFECT
+	jr z,.foundNonAffectingMove
+	cp POISON_EFFECT
+	jr z,.foundNonAffectingMove
+	cp PARALYZE_EFFECT
+	jr nz,.doesNotEffectSubstituteLoop
+.foundNonAffectingMove
+	ld a,[hl]
+	add $20
+	ld [hl],a
+	jr .doesNotEffectSubstituteLoop
+.seededCheck
+	ld a,[W_PLAYERBATTSTATUS2]
+	bit Seeded,a
+	jr z,.lightScreenCheck
+	ld a,LEECH_SEED
+	ld [W_AIBUFFER1],a
+	ld b,$20
+	call AlterMovePriority
+.lightScreenCheck
+	ld a,[W_PLAYERBATTSTATUS3]
+	bit HasLightScreenUp,a
+	jr z,.reflectCheck
+	ld hl, wBuffer - 1
+    ld de, wEnemyMonMoves
+    ld b, NUM_MOVES + 1
+.discourageSpecialMovesLoop
+    dec b
+    jr z, .reflectCheck
+    inc hl
+    ld a, [de]
+    and a
+    jr z, .reflectCheck
+    inc de
+    call ReadMove
+	ld a,[W_ENEMYMOVETYPE]
+	cp FIRE
+	jr c,.discourageSpecialMovesLoop
+	ld a,[hl]
+	add $8
+	ld [hl],a
+	jr .discourageSpecialMovesLoop
+.reflectCheck
+	ld a,[W_PLAYERBATTSTATUS3]
+	bit HasReflectUp,a
+	ret z
+	ld hl, wBuffer - 1
+    ld de, wEnemyMonMoves
+    ld b, NUM_MOVES + 1
+.discouragePhysicalMovesLoop
+    dec b
+    ret z
+    inc hl
+    ld a, [de]
+    and a
+    ret z
+    inc de
+    call ReadMove
+	ld a,[W_ENEMYMOVETYPE]
+	cp FIRE
+	jr nc,.discouragePhysicalMovesLoop
+	ld a,[hl]
+	add $8
+	ld [hl],a
+	jr .discouragePhysicalMovesLoop
 
+ConfusionMoves:
+	db SUPERSONIC
+	db CONFUSE_RAY
+	db $ff
 StatusAilmentMoveEffects ; 57e2
 	db $01 ; unused sleep effect
 	db SLEEP_EFFECT
@@ -152,6 +385,37 @@ StatusAilmentMoveEffects ; 57e2
 	db PARALYZE_EFFECT
 	db $FF
     
+UsableMoveEffectsDuringFlyOrDig:
+	db HAZE_EFFECT
+	db BIDE_EFFECT
+	db SWITCH_AND_TELEPORT_EFFECT
+	db FLY_EFFECT
+	db MIST_EFFECT
+	db FOCUS_ENERGY_EFFECT ; Kappa
+	db LIGHT_SCREEN_EFFECT
+	db REFLECT_EFFECT
+	db SUBSTITUTE_EFFECT
+	db MIMIC_EFFECT
+	db METRONOME_EFFECT ; Kappa
+	db DISABLE_EFFECT
+	db $ff
+
+DigOrFlyMoves:
+	db DIG
+	db FLY
+	db $ff
+	
+ParalyzeOrSleepMoves:
+	db STUN_SPORE
+	db THUNDER_WAVE
+	db GLARE
+	db SING
+	db SLEEP_POWDER
+	db HYPNOSIS
+	db LOVELY_KISS
+	db SPORE
+	db $ff
+	
 SmartAI:
 ; damaging move priority on turn 3+
     ld a, [wAILayer2Encouragement]
@@ -287,7 +551,6 @@ SmartAI:
     ld b, 20
 .applydreameater
     call AlterMovePriority
-
 .effectivenesscheck
 ; encourage any damaging move with SE; slightly discourage any NVE move but not by as much
     ld hl, wBuffer - 1

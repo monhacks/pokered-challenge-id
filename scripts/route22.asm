@@ -53,7 +53,7 @@ Route22RivalMovementData: ; 50efb (14:4efb)
 Route22Script0: ; 50f00 (14:4f00)
 	ld a, [wd7eb]
 	bit 7, a
-	ret z
+	;ret z
 	ld hl, .Route22RivalBattleCoords  ; $4f2d
 	call ArePlayerCoordsInArray
 	ret nc
@@ -67,9 +67,12 @@ Route22Script0: ; 50f00 (14:4f00)
 	ld [wd528], a
 	ld a, [wd7eb]
 	bit 0, a ; is this the rival battle at the beginning of the game?
-	jr nz, .firstRivalBattle ; 0x50f25 $b
+	;jr nz, .firstRivalBattle ; 0x50f25 $b
 	bit 1, a ; is this the rival at the end of the game?
-	jp nz, Route22Script_5104e
+	ret z
+	ld a,[W_OBTAINEDBADGES]
+	inc a
+	jp z, Route22Script_5104e
 	ret
 
 .Route22RivalBattleCoords
