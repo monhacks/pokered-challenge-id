@@ -520,9 +520,9 @@ SmartAI:
 	ld c,l
 	ld b,h
 	
-	ld a,[wEnemyMonHPMax]
+	ld a,[wEnemyMonMaxHP]
 	ld d,a
-	ld a,[wEnemyMonHPMax+1]
+	ld a,[wEnemyMonMaxHP+1]
 	ld e,a
 	ld h,d
 	ld l,e

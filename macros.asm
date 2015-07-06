@@ -571,8 +571,13 @@ WEST_MAP_CONNECTION: MACRO
 ENDM
 
 tmlearn: MACRO
+if 0 == \1
+tm1 = 0
+tm1_ = 0
+else
 tm1 = %111 & (\1 - 1)
 tm1_ = 1
+endc
 if 2 <= _NARG 
 tm2 = %111 & (\2 - 1)
 tm2_ = 1
