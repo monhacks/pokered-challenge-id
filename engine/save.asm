@@ -604,7 +604,7 @@ SAVCheckRandomID: ;$7ad1
 	ld a,[S_SAVEDMAINDATACHECKSUM]
 	cp c
 	jr nz,.next
-	ld hl,S_SAVEDMAINDATA + (wPokedexOwned - wPlayerID) ; player ID
+	ld hl,S_SAVEDMAINDATA + (wPlayerID - wPokedexOwned) ; player ID
 	ld a,[hli]
 	ld h,[hl]
 	ld l,a
