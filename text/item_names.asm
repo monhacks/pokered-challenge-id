@@ -82,7 +82,21 @@ ItemNames: ; 472b (1:472b)
 	db "MAX ETHER@"
 	db "ELIXER@"
 	db "MAX ELIXER@"
-    rept 112
+    db "B2F@"
+	db "B1F@"
+	db "1F@"
+	db "2F@"
+	db "3F@"
+	db "4F@"
+	db "5F@"
+	db "6F@"
+	db "7F@"
+	db "8F@"
+	db "9F@"
+	db "10F@"
+	db "11F@"
+	db "B4F@"
+    rept 98
     db "--@"
     endr
     rept 60

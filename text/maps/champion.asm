@@ -1,5 +1,5 @@
 _GaryText_760f4:: ; 860e1 (21:60e1)
-	text $53, ": Hey!"
+	text "OAK: Hey!"
 
 	para "I was looking"
 	line "forward to seeing"
@@ -58,7 +58,7 @@ _GaryText_760fe:: ; 862b4 (21:62b4)
 
 	para "You did well to"
 	line "even reach me,"
-	cont $53, ", the"
+	cont "OAK, the"
 	cont "#MON genius!"
 
 	para "Nice try, loser!"
@@ -82,11 +82,11 @@ _GaryText_76103:: ; 8632f (21:632f)
 	done
 
 _GaryText2:: ; 863c1 (21:63c1)
-	text "OAK: ", $52, "!"
+	text "OAK2: ", $52, "!"
 	done
 
 _GaryText_76120:: ; 863ca (21:63ca)
-	text "OAK: So, you won!"
+	text "OAK2: So, you won!"
 	line "Congratulations!"
 	cont "You're the new"
 	cont "#MON LEAGUE"
@@ -104,7 +104,7 @@ _GaryText_76120:: ; 863ca (21:63ca)
 	done
 
 _GaryText_76125:: ; 86463 (21:6463)
-	text "OAK: ", $53, "! I'm"
+	text "OAK2: OAK! I'm"
 	line "disappointed!"
 
 	para "I came when I"
@@ -115,7 +115,7 @@ _GaryText_76125:: ; 86463 (21:6463)
 	line "here, you had"
 	cont "already lost!"
 
-	para $53, "! Do you"
+	para "OAK! Do you"
 	line "understand why"
 	cont "you lost?"
 
@@ -130,7 +130,7 @@ _GaryText_76125:: ; 86463 (21:6463)
 	done
 
 _GaryText_7612a:: ; 86567 (21:6567)
-	text "OAK: ", $52, "!"
+	text "OAK2: ", $52, "!"
 
 	para "You understand"
 	line "that your victory"
